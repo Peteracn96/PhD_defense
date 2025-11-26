@@ -1,0 +1,16 @@
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Exciton--Polaritons in a 1D hBN superlattice}{5}{0}{2}
+\beamer@sectionintoc {3}{Screening}{6}{0}{3}
+\beamer@subsectionintoc {3}{1}{Screening (what is it?)}{7}{0}{3}
+\beamer@subsectionintoc {3}{2}{The dielectric function}{13}{0}{3}
+\beamer@sectionintoc {4}{The screened potential}{26}{0}{4}
+\beamer@subsectionintoc {4}{1}{RPA polarizability: useful expressions}{27}{0}{4}
+\beamer@subsectionintoc {4}{2}{RPA dielectric function and screened potential}{35}{0}{4}
+\beamer@sectionintoc {5}{Dielectric function in the Tight-Binding approximation}{42}{0}{5}
+\beamer@subsectionintoc {5}{1}{Tight-Binding approximation}{43}{0}{5}
+\beamer@subsectionintoc {5}{2}{Dielectric function within TB}{52}{0}{5}
+\beamer@sectionintoc {6}{Numerical results}{57}{0}{6}
+\beamer@sectionintoc {7}{Conclusions}{68}{0}{7}
+\beamer@sectionintoc {8}{Acknowledgements}{69}{0}{8}
