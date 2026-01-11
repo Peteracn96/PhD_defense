@@ -6,11 +6,67 @@
 \section{Introduction to Excitons in 2D materials}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Context}
-    No context
+\begin{frame}{Context: Excitons and \underline{Screening}}
+        \begin{columns}[T]
+
+            \column{.5\linewidth}
+            \onslide<1->{
+                \textbf{...in a crystal.}
+
+                \begin{figure}
+                    \centering
+                    \includegraphics[scale=1.]{Figures/hBN_permittivity.pdf}
+                \end{figure}
+            }
+
+            \column{.5\linewidth}
+            \onslide<2->{
+                \textbf{For a typical 3D material (e.g., GaAs)}
+                \begin{equation}
+                    E_{b,n} = - \frac{R^*}{n^2}
+                \end{equation}
+
+                \begin{equation}
+                    \label{eq:Rydberg_modified}
+                    R^* = \frac{2 \mu_{eh}^2 e^4}{\hbar^2 (8 \pi \varepsilon)^2}
+                \end{equation}
+            }
+        \end{columns}
+
+
+        \begin{columns}[T]
+
+            \column{.4\linewidth}
+            \onslide<4->{
+                \textbf{But for a 2D (insulating) material}
+            }
+            \onslide<5->{
+                \begin{itemize}
+                    \item Excitonic series $\neq$ Rydberg series
+                    \item Dielectric "constant" $\varepsilon = \lim_{q \to 0} \lim_{\omega \to 0} \varepsilon (q, \omega) = 1$
+                    \item $\varepsilon (q)$ highly dependent on $q$ (non-locality)
+                \end{itemize}
+            }
+            \column{.6\linewidth}
+            \only<6>{
+                \vspace{-0.4cm}
+                \begin{figure}
+                    \centering
+                    \includegraphics[scale=0.4]{Figures/Exciton_Series_b}
+                \end{figure}
+                \vspace{-0.4cm}
+                Alexey Chernikov et al., Phys. Rev. Lett. 113, 076802 (2014)
+            }
+            \only<7>{
+                \begin{itemize}
+                    \item "Theoretical Methods for Excitonic Physics in 2D Materials", Maurício et al. Phys. Status Solidi B, 259: 2200097, 2022 (tutorial)
+                    \item "Diele. screening in 2D insu.: Implications for excitonic and impurity states in graphane", Cudazzo et al., Phys. Rev. B \textbf{84}, 085406, 2011
+                \end{itemize}
+            }
+
+        \end{columns}
+
 \end{frame}
-
-
 
 \begin{frame}{Motivation}
     No motivation

@@ -3,89 +3,26 @@
 
 %%%%%%%  EXTRA  %%%%%%%%%
 
-\section{Extra}
+\section{Supplementary Material}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{What is in order? Real space approach}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Outline}
-    \tableofcontents
-\end{frame}
+\begin{frame}{Screened potential matrix elements}
 
-\begin{frame}{Revisiting Dyson's equation}
+    \begin{equation}
+        W_{\bG \bG'} (\bq) = \sqrt{v_c(\bq + \bG)}  \varepsilon^{-1}_{\bG \bG'} (\bq) \sqrt{v_c(\bq + \bG')}
+    \end{equation}
 
-    \begin{equation*}
-        \label{eq:polarizability_RPA_Bloch_states}
-        \chi_0 (\br,\br';\omega) = \sum_{v \bk, c\bk'} \left[ \frac{\psi_{c \bk'}(\br) \psi_{v \bk}^*(\br) \psi_{v \bk}(\br') \psi_{c \bk'}^*(\br') }{\hw -(\epsilon_{c \bk'} - \epsilon_{v \bk})   + \ii \hbar \alpha} - \frac{ \psi_{v \bk}(\br) \psi_{c \bk'}^*(\br) \psi_{c \bk'}(\br') \psi_{v \bk}^*(\br') }{\hw + (\epsilon_{c \bk'} - \epsilon_{v \bk}) + \ii \hbar \alpha} \right]\,.
-    \end{equation*}
+    Regularizing the singular terms
 
-    \begin{equation*}
-        W(\br,\br') = \int \dr'' \varepsilon^{-1} (\br,\br'') v_c (\br'',\br') = v_c (\br,\br') + \int \dx \int \dy\, v_c (\br,\bx) \chi_0 (\bx,\by) W(\by,\br')
-    \end{equation*}
+    \begin{equation}
+        W_{\bzero \bzero} (\bzero) = \frac{1}{\mathcal{A}_{\Gamma}} \int_{\mathcal{A}_{\Gamma}} \mathrm{d} \bq \, \varepsilon^{-1}_{\bzero \bzero} (\bq) v_c(\bq) \approx \frac{1}{\mathcal{A}_{\Gamma}} \int_{\mathcal{A}_{\Gamma}} \mathrm{d} \bq \, v_c(\bq) \big(1 - r_0 q \big)
+    \end{equation}
 
-    \begin{equation*}
-        \psi_{n \bk} (\br) = \frac{1}{\sqrt{N}} \sum_{\bR} \ee^{\ii \bk \cdot \bR} \sum_{i \alpha} C_{i \alpha}^{n \bk} \phi_{\alpha} (\br - \bR - \bt_i),
-    \end{equation*}
+    and for the wing terms
 
-
-\end{frame}
-
-\begin{frame}{Revisiting Dyson's equation}
-
-    In the continuum
-
-    \begin{equation*}
-        W(\br,\br') = \int \dr'' \varepsilon^{-1} (\br,\br'') v_c (\br'',\br') = v_c (\br,\br') + \int \dx \int \dy\, v_c (\br,\bx) \chi_0 (\bx,\by) W(\by,\br')
-    \end{equation*}
-
-    Discretized version, in the point-like orbital approximation
-
-    \begin{equation*}
-        W(\bR + \bt_i,\bt_j) = v_c (\bR + \bt_i,\bt_j) + \sum_{i',\bR_1}^{\bR_1+\bt_{i'} \neq \bR+\bt_i}  v_c (\bR + \bt_{i},\bR_1 + \bt_{i'}) \sum_{j',\bR''}^{\bR''+\bt_{j'} \neq \bt_j} \mathcal{T}^{i',j'}_{\bR_1,\bR''} W(\bR'' + \bt_{j'},\bt_j)
-    \end{equation*}
-
-    \begin{equation*}
-        \mathcal{T}^{i,j}_{\bR,\bR'} \equiv \frac{1}{N^2} \sum_{v \bk, c\bk'} \sum_{\alpha \beta} \frac{-2 \Re{(C^{c \bk'}_{i \alpha})^* C^{v \bk}_{i \alpha} (C^{v \bk}_{j \beta})^* C^{c \bk'}_{j \beta} \ee^{-\ii (\bk' - \bk) \cdot (\bR - \bR')} }}{\epsilon_{c \bk'} - \epsilon_{v \bk}}
-    \end{equation*}
-
-\end{frame}
-
-\begin{frame}{Screened potential in real space}
-
-    \begin{equation*}
-        W(\bR + \bt_i,\bt_j) = v_c (\bR + \bt_i,\bt_j) + \sum_{i',\bR_1}^{\bR_1+\bt_{i'} \neq \bR+\bt_i}  v_c (\bR + \bt_{i},\bR_1 + \bt_{i'}) \sum_{j',\bR''}^{\bR''+\bt_{j'} \neq \bt_j} \mathcal{T}^{i',j'}_{\bR_1,\bR''} W(\bR'' + \bt_{j'},\bt_j)
-    \end{equation*}
-
-    is equivalent to
-
-
-    \begin{equation*}
-        \hspace*{-0.55cm}W(\bR + \bt_i,\bt_j) - \sum_{j',\bR''}^{\bR''+\bt_{j'} \neq \bt_j} \left[ \sum_{i',\bR_1}^{\bR_1+\bt_{i'} \neq \bR + \bt_i} v_c (\bR + \bt_{i},\bR_1 + \bt_{i'}) \mathcal{T}^{i',j'}_{\bR_1,\bR''}  \right] W(\bR'' + \bt_{j'},\bt_j)  = v_c (\bR + \bt_i,\bt_j)
-    \end{equation*}
-
-    System of linear equations, however....
-
-    \begin{itemize}
-        \item $W(\bR + \bt_i,\bt_j) > 0$ sometimes, $W(\bR + \bt_i,\bt_j) < 0$ other times;
-        \item Situation improves including the term $\bR_1+\bt_{i'} = \bR + \bt_i$, but result is regularization dependent.
-    \end{itemize}
-
-\end{frame}
-
-\begin{frame}{Screened potential in real space: what to do?}
-
-    \begin{itemize}
-        \item Look at what chemists do.
-        \item Self-consistent approach? \\ $W(\bR + \bt_i,\bt_j) = v_c (\bR + \bt_i,\bt_j) + \sum_{i',\bR_1}^{\bR_1+\bt_{i'} \neq \bR+\bt_i}  v_c (\bR + \bt_{i},\bR_1 + \bt_{i'}) \sum_{j',\bR''}^{\bR''+\bt_{j'} \neq \bt_j} \mathcal{T}^{i',j'}_{\bR_1,\bR''} v_c(\bR'' + \bt_{j'},\bt_j) + ....$
-    \end{itemize}
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[scale=0.25]{Figures/Fiesta.png}
-    \end{figure}
-
+    \begin{equation}
+        W_{\bG \bzero} (\bzero) = W_{\bzero \bG} (\bzero) = 0
+    \end{equation}
 \end{frame}
