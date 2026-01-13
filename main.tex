@@ -9,10 +9,12 @@
 \usepackage{animate}
 \usepackage{tikz}
 \usepackage{multirow} 
+\usepackage{amsmath}
 \usepackage{chemformula}
 \usepackage{subcaption}
 \usepackage[most]{tcolorbox}
 \usepackage{empheq}
+\usepackage{bm}
 \usefonttheme{professionalfonts}
 \usepackage{physics}
 \usepackage[disablemarkdown]{pdfpc}
@@ -83,17 +85,30 @@
 
 \input{shortcuts.tex}
 
-\newcommand\occasion{Ph.D. Defense}
+\newcommand\occasion{Ph.D.~Defense}
 
 % the presentation starts here
 \title[Optical Properties of 2D Semiconductors]{Optical Properties of Two-dimensional Semiconductors:\\Excitonic and Polaritonic Effects}
 %
-\author[Pedro A.~C. Ninhos]{Pedro António Correia Ninhos}
+\author[Pedro A.~C.~Ninhos]{Pedro António Correia Ninhos}
 %
-\institute{POLIMA: Center for Polariton--Driven Light--Matter Interactions\\ University of Southern Denmark\\
+\institute{POLIMA: Center for Polariton--driven Light--Matter Interactions\\ University of Southern Denmark\\
 \textcolor{blue}{peni@mci.sdu.dk}}
 %
-\date{15-01-2026}
+\date{22-01-2026}
+
+\AtBeginSection[]
+{
+    \begin{frame}<beamer>
+    \frametitle{Outline}
+    \tableofcontents[
+        currentsection,
+        sectionstyle=show/shaded,
+        subsectionstyle=hide
+    ]
+    \end{frame}
+}
+
 
 \begin{document}
 \selectlanguage{english}
@@ -103,6 +118,15 @@
 \only<1->{
 \titlepage
 }
+
+\begin{textblock*}{8.0cm}(0.4cm,5.7cm)
+Supervisors:\\
+\small \, Prof.~N.~Asger Mortensen\\
+\, Prof.~Nuno M.~R.~Peres\\
+\, Prof.~Christos~Tserkezis\\
+\normalsize Secondment Host:\\
+\small \, Prof.~Juan~José~Palacios
+\end{textblock*}
 
 \end{frame}
 

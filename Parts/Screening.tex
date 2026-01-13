@@ -6,65 +6,6 @@
 \section{Part II: Screening in 2D materials}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Motivation}
-
-\begin{frame}{Motivation}
-    \begin{columns}[T]
-
-        \column{.5\linewidth}
-        \only<1->{
-            Rytova--Keldysh model
-            \begin{equation}
-                \varepsilon_{\mathrm{RK}} (q) = 1 + r_0 q
-            \end{equation}}
-        \only<2->{
-            \begin{itemize}
-                \item Intuitive
-                \item Analytical expression (also for $V_{\mathrm{RK}}(r)$)
-                \item \textcolor{red}{Excitons are determined numerically}
-                \item \textcolor{red}{Questionable for layered systems}
-                \item \textcolor{red}{Screening parameter $r_0$ obtained from \textit{ab initio} methods either way}
-            \end{itemize}
-        }
-
-        \column{.5\linewidth}
-        \onslide<3->{
-        Full numerical \textit{ab initio}
-            \begin{equation}
-                \varepsilon_{\vectormath{G} \vectormath{G}'} (\vectormath{q}) = \delta_{\vectormath{G} \vectormath{G}'} - v_c(\vectormath{q} + \vectormath{G}) \chi^0_{\vectormath{G} \vectormath{G}'}(\vectormath{q})
-            \end{equation}
-
-            \begin{itemize}
-                \item Works for any kind of system
-                \item Implementation done only once
-                \item Several packages available (BerkeleyGW, Yambo, VESPA, etc...)
-                \item Captures screening in its $q$ entirety
-                \item \textcolor{red}{Very heavy computationally}
-                \item \textcolor{red}{Technically involved/Less accessible}
-                \item \textcolor{red}{Systems are always 3D}
-            \end{itemize}
-        }
-    \end{columns}
-\end{frame}
-
-\begin{frame}{Motivation}
-
-    \onslide<1->{(Citing J. N. S. Gomes, C. Trallero-Giner, and Mikhail I. Vasilevskiy in "Variational calculation of the lowest exciton states in phosphorene and TMDs", J.~Phys.: Condens. Matter 34 (2022) 045702)
-    
-    \vspace{0.5cm}
-    ``There is a broad literature on the electronic and exciton properties of TMDs [...] Using the [\textit{ab initio}] Bethe--Salpeter equation on top of the DFT calculations, two-particle (including exciton) properties have been evaluated.
-    However, \textbf{this approach is computationally very demanding}.
-    Alternatively [...] the Wannier effective mass theory can be used to calculate the exciton energy spectrum...''}
-
-    \vspace{0.5cm}
-    
-    \onslide<2->{\small The Xatu code, A.~J.~Uría-Álvarez, J.~J.~Esteve-Paredes, M. A. García-Blásquez , J. J. Palácios, Comp. Phys. Comm. 295 (2024) 109001}
-
-    \vspace{0.2cm}
-
-    \onslide<3->{\small WanTiBEXOS package for Python, Comp. Phys. Comm. 285 (2023) 108636}
-\end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{2D Dielectric function}
 
@@ -75,25 +16,25 @@
 % \column{.5\linewidth}
 
     \onslide<1->{
-     \begin{equation}
+     \begin{equation*}
         \varepsilon^{\mathrm{RPA}}(\vectormath{r},\vectormath{r}';t,t') = \delta(\vectormath{r}-\vectormath{r}') \delta(t-t') - \int v_c(\vectormath{r}-\vectormath{r}'') \chi^0(\vectormath{r}'',\vectormath{r}';t-t'') \,\dr''
-    \end{equation}
+    \end{equation*}
     }
 
     \onslide<2->{
         
-        \begin{equation}
+        \begin{equation*}
             \varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \sqrt{v_c(\bq + \bG)} \chi^0_{\bG \bG'} (\bq) \sqrt{v_c(\bq + \bG')}\,, 
             \begin{cases}
                 v_c(\bq) = \frac{e^2}{2 \varepsilon_0 |\bq|} & \text{in } \mathrm{2D} \\
                 v_c(\bq) = \frac{e^2}{\varepsilon_0 |\bq|^2} & \text{in } \mathrm{3D}
             \end{cases}
-        \end{equation}}
+        \end{equation*}}
     \onslide<2->{
         For an insulator/semiconductor
 
         \begin{empheq}[innerbox=\fbox]{align}
-            \chi^0_{\bG \bG'} (\bq) = \frac{2}{\mathcal{A}} \sum_{vc} \sum_{\bk \sigma} \frac{\bra{c,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{v,\bk  + \bq} \! \bra{v,\bk  + \bq} \ee^{\ii(\bq + \bG') \vdot \br} \ket{c,\bk}}{\epsilon_{v,\bk + \bq} - \epsilon_{c,\bk} }
+            \chi^0_{\bG \bG'} (\bq) = \frac{2}{\mathcal{A}} \sum_{vc} \sum_{\bk \sigma} \frac{\bra{c,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{v,\bk  + \bq} \! \bra{v,\bk  + \bq} \ee^{\ii(\bq + \bG') \vdot \br} \ket{c,\bk}}{\epsilon_{v\bk + \bq} - \epsilon_{c\bk} }
         \end{empheq}
         [1] Jack Deslippe et al., “BerkeleyGW: A massively parallel computer package for the calculation of the quasiparticle and optical properties of materials and nanostructures”, Computer Physics Communications 183.6 (2012)
     }
@@ -104,24 +45,24 @@
 \begin{frame}{Macroscopic dielectric function}
 
     \onslide<1->{
-        \begin{equation}
+        \begin{equation*}
                 W_{\bG \bG'}(\bq) = \sqrt{v_c(\bq+\bG)} \varepsilon^{-1}_{\bG \bG'} (\bq) \sqrt{v_c(\bq+\bG')}
-        \end{equation}}
+        \end{equation*}}
 
     \onslide<2->{
         Ignoring local field effects ($\bG=\bG'=0$) and defining $\varepsilon_{\mathrm{M}}(\bq) = \frac{1}{\varepsilon^{-1}_{\bzero \bzero}(\bq)} \neq \varepsilon_{\bzero \bzero}(\bq)$
 
-        \begin{equation}
+        \begin{equation*}
             W(\bq) =  \frac{v_c(\bq)}{\varepsilon_{\mathrm{M}}(\bq)}
-        \end{equation}}
+        \end{equation*}}
 
     \onslide<3->{
 
         For a 2D semiconductor/insulator $\varepsilon_{\mathrm{M}}(\bq) = \varepsilon_{\mathrm{2D}}(\bq) \stackrel{q \to 0}{\approx} 1 + r_0 q \equiv \varepsilon_{\mathrm{RK}}(\bq)$
 
-        \begin{equation}
+        \begin{equation*}
             V_{\mathrm{RK}}(q) =  \frac{v_c(q)}{\varepsilon_{\mathrm{RK}}(q)} = \frac{e^2}{2 \varepsilon_0 (1 + r_0 q) q}
-        \end{equation}}
+        \end{equation*}}
 
 \end{frame}
 
@@ -136,19 +77,19 @@
         \onslide<1->{
         Linear combination of atomic orbitals (LCAO) method
 
-        \begin{equation}
+        \begin{equation*}
             \psi_{n \bk} (\br) = \frac{1}{\sqrt{N}} \sum_{\bR} \ee^{\ii \bk \cdot \bR} \sum_{i \alpha} C_{i \alpha}^{n \bk} \phi_{\alpha} (\br - \bR - \bt_i)
-        \end{equation}
+        \end{equation*}
         
-        \begin{equation}
+        \begin{equation*}
             H \psi_{n \bk} (\br) = \epsilon_{n \bk} \psi_{n \bk} (\br)
-        \end{equation}}
+        \end{equation*}}
 
         \onslide<2->{
         
-        \begin{equation}
+        \begin{equation*}
             H(\bk) \mathbf{C}^{n\bk} = \epsilon_{n\bk} \mathbf{C}^{n\bk}
-        \end{equation}
+        \end{equation*}
         
         \begin{equation*}
             C^{n \bk}_{i \alpha} \to  \text{TB coefficients}
@@ -157,8 +98,8 @@
 
         \column{0.5\linewidth}
         \onslide<3->{
-            \hspace{-0.40cm}
-        \begin{equation}
+            \hspace{-0.5cm}
+        \begin{equation*}
             H(\bk)\!\begin{bmatrix}
                        C^{n\vectormath{k}}_{1,1} \\
                        C^{n\vectormath{k}}_{1,2} \\
@@ -182,7 +123,7 @@
                                                 C^{n\vectormath{k}}_{N_a,N^{(N_a)}_{o}-1} \\
                                                 C^{n\vectormath{k}}_{N_a,N^{(N_a)}_{o}}
             \end{bmatrix}
-        \end{equation}}
+        \end{equation*}}
 
     \end{columns}
 
@@ -190,30 +131,30 @@
 
 \begin{frame}{Polarizability in the TB approximation}
 
-    \begin{equation}
+    \begin{equation*}
             H(\bk) \mathbf{C}^{n\bk} = \epsilon_{n\bk} \mathbf{C}^{n\bk}
-    \end{equation}
+    \end{equation*}
 
     \onslide<1->{
-        \begin{equation}
+        \begin{equation*}
             \begin{split}
-                \chi^0_{\bG \bG'} (\bq) &=\frac{2}{\mathcal{A}} \sum_{vc} \sum_{\bk \sigma} \frac{\bra{c,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{v,\bk  + \bq} \! \bra{v,\bk  + \bq} \ee^{\ii(\bq + \bG') \vdot \br} \ket{c,\bk}}{\epsilon_{v,\bk + \bq} - \epsilon_{c,\bk} }= \\
-                &=\frac{2}{\mathcal{A}} \sum_{v c} \sum_{\bk \sigma} \frac{I^{\bG}_{v \bk + \bq, c \bk} \qty(I^{\bG'}_{v \bk + \bq, c \bk})^*}{\epsilon_{v,\bk + \bq} - \epsilon_{c,\bk} }
+                \chi^0_{\bG \bG'} (\bq) &=\frac{2}{\mathcal{A}} \sum_{vc} \sum_{\bk \sigma} \frac{\bra{c,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{v,\bk  + \bq} \! \bra{v,\bk  + \bq} \ee^{\ii(\bq + \bG') \vdot \br} \ket{c,\bk}}{\epsilon_{v\bk + \bq} - \epsilon_{c\bk} }= \\
+                &=\frac{2}{\mathcal{A}} \sum_{v c} \sum_{\bk \sigma} \frac{I^{\bG}_{v \bk + \bq, c \bk} \qty(I^{\bG'}_{v \bk + \bq, c \bk})^*}{\epsilon_{v\bk + \bq} - \epsilon_{c\bk} }
             \end{split}
-        \end{equation}}
+        \end{equation*}}
 
     \onslide<2->{
         Point-like orbital approximation: $\phi^*_{\alpha} (\br - \bR - \bt_i) \phi_{\beta} (\br - \bR' - \bt_j) \approx \delta_{ij} \delta_{\alpha \beta} \delta_{\bR \bR'} \delta(\br - \bR - \bt_i) \Rightarrow$
-        \begin{equation}
+        \begin{equation*}
             \begin{split}
-                \Rightarrow I^{\bG}_{n \bk, n' \bk + \bq} \equiv \bra{n,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{n',\bk  +\bq} &= \int_{\mathcal{A}} \dr\, \psi^*_{n \bk } (\br)\, \ee^{-\ii(\bq + \bG) \vdot \br} \psi_{n' \bk+ \bq} (\br) = \\
+                \Rightarrow I^{\bG}_{n \bk, n' \bk + \bq} \equiv \bra{n,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{n',\bk  +\bq} &= \int_{\mathcal{A}} \dr\, \psi^*_{n, \bk } (\br)\, \ee^{-\ii(\bq + \bG) \vdot \br} \psi_{n', \bk+ \bq} (\br) = \\
                 &= \sum_{i \alpha} (C_{i \alpha}^{n \bk })^* C_{i \alpha}^{n' \bk + \bq}  \ee^{- \ii (\bq + \bG)  \vdot \bt_i}
             \end{split}
-        \end{equation}}
+        \end{equation*}}
 
 \end{frame}
 
-\begin{frame}{Exciton computation scheme witht the Xatu code}
+\begin{frame}{Exciton computation scheme with the Xatu code}
 
     \begin{enumerate}
         \item Diagonalize $H(\bk + \bq)$ and store all $\{\epsilon_{n\bk + \bq}\}$,$\{\mathbf{C}^{n\bk  + \bq}\}\, \forall \bq \in \mathrm{BZ}, \, \forall \bk \in \mathrm{BZ'}, \mathrm{BZ} \neq \mathrm{BZ}' $  \itemsep=2em
@@ -268,13 +209,13 @@
 
         \onslide<1->{
             Defined as
-            \begin{equation}
+            \begin{equation*}
                 \varepsilon^{\mathrm{2D}}(\bq) \equiv \frac{1}{\varepsilon^{-1}_{\bzero \bzero}(\bq)}
-            \end{equation} }
+            \end{equation*} }
 
         \onslide<3->{
 
-        We recover:
+        \textbf{We recover:}
         \begin{block}{}
             \begin{itemize}
                 \item Rytova--Keldysh model
@@ -301,21 +242,21 @@
         \onslide<1->{
         \vspace{-6cm}
 
-            \begin{equation}
+            \begin{equation*}
                 \varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \frac{e^2}{2 |\bq + \bG| \varepsilon_0} \chi^0_{\bG \bG'}(\bq)
-            \end{equation}
+            \end{equation*}
             
             with $\langle n,\bk |\ee^{-\ii (\bq + \bG) \vdot \br}|n',\bk'\rangle$ computed on the fly, then
 
-            \begin{equation}
+            \begin{equation*}
                \text{invert } \varepsilon_{\bG \bG'} (\bq)
-            \end{equation}
+            \end{equation*}
 
             and finally, compute the 2D eff.~dielectric function as
 
-            \begin{equation}
+            \begin{equation*}
                 \varepsilon^{\mathrm{2D}}(\bq) = \frac{1}{\varepsilon^{-1}_{\bzero \bzero} (\bq)}
-            \end{equation}}
+            \end{equation*}}
         
         \column{0.01\textwidth}
         \rule{.1mm}{1.3\textheight}
@@ -323,23 +264,23 @@
         \column{0.49\textwidth}
 
         \onslide<2->{
-            \vspace{-4.5cm}
+            \vspace{-6.0cm}
             \textit{Ab initio}
-            \begin{equation}
+            \begin{equation*}
                 \varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \frac{e^2}{|\bq + \bG|^2 \varepsilon_0} \chi^0_{\bG \bG'}(\bq)
-            \end{equation}
+            \end{equation*}
 
             with $\langle n,\bk |\ee^{-\ii (\bq + \bG) \vdot \br}|n',\bk'\rangle$ via FFT, then do
 
-            \begin{equation}
+            \begin{equation*}
                 \text{invert } \varepsilon_{\bG \bG'} (\bq)
-            \end{equation}
+            \end{equation*}
 
             after, inverse Fourier transform on $z$ as
             \vspace{-0.3cm}
-            \begin{equation}
+            \begin{equation*}
                 \varepsilon^{-1}_{\bzero \bzero}(\bq,z,z') = \frac{1}{L_{\perp}} \sum_{G_z, G_z'} \ee^{\ii G_z z} \varepsilon^{-1}_{G_z \hat{z} G_z' \hat{z}}(\bq) \ee^{-\ii G_z' z'}
-            \end{equation}
+            \end{equation*}
 
             and finally $\varepsilon^{\mathrm{2D}}(\bq) = 1/\langle \varepsilon^{-1}_{\bzero \bzero}(\bq,z,z') \rangle$
 
@@ -355,26 +296,26 @@
 
     Bethe--Salpeter Equation (BSE)
 
-    \begin{empheq}[innerbox=\fbox]{equation}
+    \begin{empheq}[innerbox=\fbox]{equation*}
         \qty(\epsilon_{c  \bk + \bQ} - \epsilon_{v \bk}) A^{\bQ}_{v c }(\bk) + \sum_{v' c',\bk'} K_{v c, v' c'}(\bk,\bk',\bQ) A^{\bQ}_{v'c'}(\bk') = E_X A^{\bQ}_{v c }(\bk)
         \label{eq:exact_Bethe_Salpeter_equation}
     \end{empheq}
 
     In the interaction kernel $K \equiv - (D - X)$, the direct $D$ and exchange $X$ interaction terms read
 
-   \begin{equation}
+   \begin{equation*}
         \begin{aligned}
             \label{eq:interaction_matrix_element_direct_reciprocal}
             D_{vc, v' c'}(\bk,\bk',\bQ) =& \int \dr \int \dr' \psi^*_{c,\bk+\bQ}(\br) \psi^*_{v',\bk'}(\br') W(\br,\br') \psi_{c',\bk'+\bQ}(\br) \psi_{v, \bk}(\br') = \\
             =& \frac{1}{\mathcal{A}} \sum_{\bG,\bG'} \qty(I^{\bG}_{c' \bk'+\bQ, c \bk+\bQ})^* W_{\bG \bG'}(\bk - \bk') I^{\bG'}_{v' \bk',v\bk}
         \end{aligned}
-    \end{equation}
+    \end{equation*}
 
     and (albeit in \textit{ab initio} $X$ uses the bare potential $v_c$)
     \vspace{-0.3cm}
-    \begin{equation}
+    \begin{equation*}
         X_{vc, v' c'}(\bk,\bk',\bQ) = \int_{\mathcal{A}} \dr \int_{\mathcal{A}} \dr' \psi^*_{c,\bk+\bQ}(\br) \psi^*_{v',\bk'}(\br') W(\br,\br') \psi_{v,\bk}(\br) \psi_{c',\bk'+\bQ}(\br')
-    \end{equation}
+    \end{equation*}
 
 \end{frame}
 
@@ -429,4 +370,73 @@
     \end{table}
 
     Cell with -- means that the output result does not make physical sense
+
+    At least apparent numerical convergence
+\end{frame}
+
+\begin{frame}{Excitons in \ch{MoS2}: numerical results}
+
+    \begin{table}[h]
+        \caption{This table examines the convergence of the excitonic ground state binding energy with the cutoff for the dielectric matrix, $G_c^{\varepsilon}$, and for the interaction matrix elements, $G_c^X$, always with $G_c^X < G_c^{\varepsilon}$. We have used $N_k=60^2$, $N_c=N_v=1$, and we have excluded the exchange interaction term. For the size of the regularization region, we used the radius $q_0 = 0.6 k_0$, where $k_0$ is the norm of the wavevector(s) closest to the origin. All values are in eV. $\Delta = 2.08366$~eV}
+        \centering
+            \begin{tabular}{cc||cccccc}
+                \cline{3-8}
+                &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$ (\AA$^{-1}$)}                                            \\ \cline{3-8}
+                &   & 0                      & 3                      & 4                           & 5                        & 7                      & 8                       \\ \cline{8-8} \hline \hline
+                \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 0.979507               & 1.567935                    & 1.401440                 & 1.951914               & ---        \\
+                \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & 0.756373               & 1.619208                    & 1.785953                 & ---                    & ---          \\ \cline{4-4} \cline{4-4}
+                \multicolumn{1}{|c|}{}                           & 4 & X                      & \multicolumn{1}{c|}{X} & 0.774599                    & 1.105537                 & ---                    & ---          \\ \cline{5-5} \cline{5-5}
+                \multicolumn{1}{|c|}{}                           & 5 & X                      & X                      & \multicolumn{1}{c|}{X}      & 0.778244                 & ---                    & ---          \\ \cline{6-6} \cline{6-6}
+                \multicolumn{1}{|c|}{}                           & 7 & X                      & X                      & X                           & \multicolumn{1}{c|}{X}   & 0.792309               & 1.300835          \\ \cline{7-7}
+                \multicolumn{1}{|c|}{}                           & 8 & X                      & X                      & X                           & X                        & \multicolumn{1}{c|}{X} & 0.799489 \\  \cline{1-2} \cline{1-2} \cline{8-8}
+            \end{tabular}
+    \end{table}
+
+    Cell with -- means that the output result does not make physical sense
+
+    At least apparent numerical convergence
+\end{frame}
+
+\begin{frame}{The quasi-2D approach for screening}
+    Introducing the bare Coulomb potential in the mixed $(\bq,z)$-representation
+
+    \begin{equation}
+        v_{c}(\bq,z-z') =  \frac{e}{2 \epsilon_0 q} \, \ee^{- q|z-z'|}\,,
+    \end{equation}
+
+    We can work within a quasi-2D (Q2D) framework, where the dielectric function in the mixed representation as
+
+    \begin{equation}
+        \varepsilon_{\bG \bG'}(\bq,z,z') = \delta_{\bG \bG'} \delta( z-z')- \frac{e}{2\epsilon_0|\bq +\bG|} \int_{-\infty}^{\infty} \dd z'' \ee^{-|\bq +\bG||z-z''|} \chi^{0}_{\bG \bG'}(\bq,z'',z')
+    \end{equation}
+
+    with the $(\bq,z)$-resolved polarizability
+
+    \begin{equation}
+        \chi^{0}_{\bG \bG'}(\bq,z,z') = \int_{\mathcal{A}} \dd \br_{||} \int_{\mathcal{A}} \dd \br_{||}' \, \ee^{-\ii (\bq + \bG) \vdot \br} \chi^{0}(\br,\br') \ee^{\ii (\bq' + \bG') \vdot \br'}
+    \end{equation}
+\end{frame}
+
+\begin{frame}{The Q2D dielectric function}
+    Defining an effective 2D macroscopic dielectric function by averaging over $\dd_{\perp}$
+    \only<1->{
+    \begin{equation}
+        \bar{\varepsilon}_{\bG \bG'}(\bq) \equiv \frac{1}{\dd_{\perp}} \int_{-\dd_{\perp}/2}^{\dd_{\perp}/2} \int_{-\dd_{\perp}/2}^{\dd_{\perp}/2} \varepsilon_{\bG \bG'}(\bq,z,z')\,\dd z\dd z'
+    \end{equation}}
+    \only<2->{
+    \begin{empheq}[innerbox=\fbox]{align}
+        \label{eq:Q2D_dielectric_function_zero_thickness_limit}
+        \varepsilon_{\bG \bG'}(\bq) = \lim_{\dd_{\perp}\! \to 0} \frac{1}{\dd_{\perp}} \int_{-\dd_{\perp}/2}^{\dd_{\perp}/2} \int_{-\dd_{\perp}/2}^{\dd_{\perp}/2} \varepsilon_{\bG \bG'}(\bq,z,z')\,\dd z\dd z'
+    \end{empheq}}
+\onslide<5->{But how does $\bar{\varepsilon}_{\bG \bG'}(\bq)$ improve our dielectric function?}
+\end{frame}
+
+\begin{frame}{The Q2D dielectric function: numerical results}
+    For hBN and \ch{MoS2} CRYSTAL models
+    \onslide<1->{
+    \begin{figure}[h]
+         \centering
+         \includegraphics[width=0.6\textwidth]{Figures/epsilon_M_vs_q_hBN_&_MoS2.pdf}
+     \caption{2D~effective dielectric function of monolayer hBN and \ch{MoS2}, computed by our strict 2D~and quasi-2D approaches, in dashed red and continuous blue lines, respectively. For comparison, the \textit{ab-initio}~ones from Latini and Nano Lett. 2015, 15, 7, 4616–4621 are represented as well. We applied $G_c = 3.0$~\AA$^{-1}$. We used $\dd_{\perp}=3.33$~\AA.}
+    \end{figure}}
 \end{frame}

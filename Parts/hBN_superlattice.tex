@@ -6,89 +6,7 @@
 \section{Part I: Exciton--Polaritons in a 1D hBN superlattice}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Motivation}
-    No motivation whatsoever
-\end{frame}
-
-\subsection{Hexagonal boron nitride in photonics}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{hBN in photonics}
-
-\only<1->{
-\begin{textblock*}{8.0cm}(0.2cm,1.5cm)
-\begin{itemize}
-    \item Low defects density [1] %People realized that Luminescent defect centers in hBN were a promising source for SPEs. Defects in hBN are known to reduce phonon lifetimes, and, thus, are detrimental to its use for IR nanophotonics, but such defects are at the heart of hBN’s promise as a single-photon emitter.
-    \item Ballistic transport  in graphene [2] %as an encapsulating material, hBN enhances carriers mobility in graphene. This reports ballistic transport up to 28 micrometer
-    \item Hyperbolic material (MIR) [3]
-    \item Polaritonics in the MIR [4] %hBN interesting on its own as the active material. In this experimental work phonon-polaritons were excited. They used s-snom to measure the propagation length of phonon-polaritons.
-\end{itemize}
-\end{textblock*}
-
-
-\begin{textblock*}{5.0cm}(6.8cm,1.cm)
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.5]{Figures/ballistic_transport.PNG}
-\end{figure}
-\end{textblock*}
-
-\begin{textblock*}{5.0cm}(7.7cm,2.5cm)
-[2]
-\end{textblock*}
-
-\begin{textblock*}{5.0cm}(10.4cm,1.1cm)
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.3]{Figures/phonon_polaritons.PNG}
-\end{figure}
-\end{textblock*}
-
-\begin{textblock*}{5.0cm}(12.5cm,2.4cm)
-[4]
-\end{textblock*}
-
-\begin{textblock*}{5.0cm}(.2cm,3.5cm)
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.3]{Figures/hBN_on_quartz.PNG}
-\end{figure}
-\end{textblock*}
-
-\begin{textblock*}{5.0cm}(9cm,3.0cm)
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.4]{Figures/PL_hBN.PNG}
-\end{figure}
-\end{textblock*}
-
-\begin{textblock*}{5.0cm}(2.cm,7.0cm)
-[5,6]
-\end{textblock*}
-
-\begin{textblock*}{5.0cm}(9.7cm,4.5cm)
-[5,6]
-\end{textblock*}
-
-
-
-\begin{textblock*}{8.0cm}(.2cm,7.5cm)
-\scriptsize{[1] I.H. Abidi et al., \textit{Adv. Opt. Mater.} 7, 1900397 (2019)} \\
-\scriptsize{[2] L. Banszerus et al., \textit{Nano Lett. } 16, 1387–1391 (2016)} \\
-\scriptsize{[3] J. D. Caldwell et al., \textit{Nat. Rev. Mat.} 4, 5221 (2019)}
-\end{textblock*}
-\begin{textblock*}{14.0cm}(7.0cm,7.5cm)
-\scriptsize{[4] D. Rizzo et al., \textit{Nano Lett. } 23, 18, 8426–8435 (2023)} \\
-\scriptsize{[5] J. Henriques et al., \textit{J. Phys.: Cond. Matter} 32, 025304 (2019)} \\
-\scriptsize{[6] C. Elias et al., \textit{Nat. Comm.} 10, 2639 (2019)} %Colla between Laboratory Charles Coulomb Montpellier and Nottingham
-\end{textblock*}
-
-}
-
-\end{frame}
-
 \subsection{Setup}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -114,18 +32,19 @@
         \column{.4\linewidth}
 
         \only<2->{
-            \begin{textblock*}{4.0cm}(10.0cm,0.6cm)
+            \begin{textblock*}{4.0cm}(9.0cm,0.6cm)
             \small
             \begin{equation*}
-                H = H_{\mathrm{Dirac}} + V_0 \cos (G_0 x), \, \vectormath{G}_0 = \frac{2 \pi}{L} \mathbf{\hat{x}}
-            \end{equation*}
-            \begin{equation*}
-                \Rightarrow \Bar{H}
+                \begin{aligned}
+                & H_0 = H_{\mathrm{Dirac}} + V_0 \cos (G_0 x), \, \vectormath{G}_0 = \frac{2 \pi}{L} \mathbf{\hat{x}} \\
+                 \Rightarrow & \overline{H}_0 = \hbar v_F [q_{x} \sigma_{x} +J_{0}(\beta)q_{y} \sigma_{y}] - \frac{E_g}{2} J_{0}(\beta) \sigma_{z}
+                \end{aligned}
             \end{equation*}
             \end{textblock*}
         }
 
         \only<3->{
+            \vspace{0.8cm}
             \begin{figure}
                 \centering
                 \includegraphics[scale=0.6]{Figures/anisotropic_bands.pdf}
@@ -133,7 +52,7 @@
         }
 
         \only<4->{
-            \vspace{-0.3cm}
+            \vspace{-0.8cm}
             \begin{equation*}
                 \beta = V_{0} L/(\pi\hbar v_{F})
             \end{equation*}
@@ -148,7 +67,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Wannier equation and variational method}
 \begin{frame}{Wannier equation and variational method}
 
 
@@ -160,8 +78,8 @@
 
 \begin{textblock*}{10.0cm}(0.8cm,1.3cm)
 \centering{
-\begin{empheq}[box={\tcbhighmath[colback=white]}]{align*}
-E_{bind.,\nu} \psi_\nu (\mathbf{r}) = \left(\frac{p_{x}^{2}}{2\mu_{x}}+\frac{p_{y}^{2}}{2\mu_{y}}\right) \psi_\nu (\mathbf{r}) - V_{\mathrm{RK}}(\mathbf{r}) \psi_\nu (\mathbf{r}) 
+\begin{empheq}[innerbox=\fbox]{align*}
+E_{bind.,\nu} \psi_\nu (\vectormath{r}) = \left(\frac{p_{x}^{2}}{2\mu_{x}}+\frac{p_{y}^{2}}{2\mu_{y}}\right) \psi_\nu (\vectormath{r}) - V_{\mathrm{RK}}(\vectormath{r}) \psi_\nu (\vectormath{r}) 
 \end{empheq}
 }
 \end{textblock*}
@@ -176,7 +94,7 @@ E_{bind.,\nu} \psi_\nu (\mathbf{r}) = \left(\frac{p_{x}^{2}}{2\mu_{x}}+\frac{p_{
     \begin{textblock*}{5.0cm}(11.cm,1.cm)
     \small{
         \begin{equation*}
-            V_{\mathrm{RK}}(q)=\frac{\ee^{2}}{2 \varepsilon_0 (1+q r_{0}/\kappa) q}
+            V_{\mathrm{RK}}(q)=\frac{e^{2}}{2 \varepsilon_0 (\kappa+q r_{0}) q}
         \end{equation*}
         
         \begin{equation*}
@@ -186,14 +104,13 @@ E_{bind.,\nu} \psi_\nu (\mathbf{r}) = \left(\frac{p_{x}^{2}}{2\mu_{x}}+\frac{p_{
 }
 
 
-
 \only<3->{
 
 \begin{textblock*}{5.0cm}(.4cm,3.8cm)
 \underline{Trial wavefunctions} [1]:
 \end{textblock*}
 
-\begin{textblock*}{5.0cm}(.4cm,3.9cm)
+\begin{textblock*}{5.0cm}(.cm,3.9cm)
 \centering{
 \begin{equation*}
 \begin{split}
@@ -209,10 +126,10 @@ E_{bind.,\nu} \psi_\nu (\mathbf{r}) = \left(\frac{p_{x}^{2}}{2\mu_{x}}+\frac{p_{
 }
 
 \only<4->{
-    \begin{textblock*}{10.0cm}(5.2cm,3.3cm)
+    \begin{textblock*}{10.0cm}(4.8cm,3.cm)
         \centering{
         \begin{center}
-        \includegraphics[scale=0.4]{Figures/Band_gap_and_binding_energies.pdf}
+        \includegraphics[scale=0.45]{Figures/Band_gap_and_binding_energies.pdf}
         \end{center}}
     \end{textblock*}
 }
@@ -236,15 +153,15 @@ E_{bind.,\nu} \psi_\nu (\mathbf{r}) = \left(\frac{p_{x}^{2}}{2\mu_{x}}+\frac{p_{
 % \end{equation*}
 % \vspace{-0.3cm}
 % \begin{equation*}
-%   \Omega_\alpha =  \sum\nolimits_{\mathbf{k}} \Psi_{\alpha} (\mathbf{k}) \langle v, \mathbf{k} | \mathbf{r} \cdot \hat{\mathbf{e}} | c, \mathbf{k} \rangle
+%   \Omega_\alpha =  \sum\nolimits_{\mathbf{k}} \Psi_{\alpha} (\mathbf{k}) \langle v, \mathbf{k} | \vectormath{r} \cdot \hat{\mathbf{e}} | c, \mathbf{k} \rangle
 % \end{equation*}}
 % \end{textblock*}
 % }
 
 \only<1->{
-\begin{textblock*}{6.0cm}(10.0cm,1.0cm)
+\begin{textblock*}{6.0cm}(10.1cm,1.0cm)
 \centering{\small
-According to [1]
+According to T.~Pedersen [1]
 \begin{equation*}
     \scalebox{1.0}{$\sigma_{jj} (\omega) = -i \sigma_0 \sum_{\nu=1s,2s}  \frac{E_\nu |\Omega^j_\nu|^2 }{E_\nu - (\hbar \omega + i\Gamma)} $}
 \end{equation*}}
@@ -260,16 +177,16 @@ According to [1]
 \centering{
 \begin{equation*}
     \begin{aligned}
-        &\scalebox{.8}{$\Omega_\nu =  \sum_{\mathbf{q}} \Psi_{\nu} (\mathbf{q}) \langle -, \mathbf{q} | \mathbf{r} \cdot \hat{\mathbf{e}}_j | +, \mathbf{q} \rangle$} \\
+        &\scalebox{.8}{$\Omega_\nu =  \sum_{\bm{q}} \Psi_{\nu} (\bm{q}) \langle -, \bm{q} | \vectormath{r} \cdot \hat{\mathbf{e}}_j | +, \bm{q} \rangle$} \\
         &\scalebox{.8}{$\mathbf{\hat{e}}_j = \mathbf{\hat{x}}, \mathbf{\hat{y}}$} \\
-        &\scalebox{.8}{$\Bar{H} |\pm, \bq \rangle =  E_{\pm,\bq}|\pm, \bq \rangle$}
+        &\scalebox{.8}{$\overline{H}_0 |\pm, \bq \rangle =  E_{\pm,\bq}|\pm, \bq \rangle$}
     \end{aligned}
 \end{equation*}}
 \end{textblock*}
 }
 
 \only<3->{
-\begin{textblock*}{10.0cm}(0.cm,0.8cm)
+\begin{textblock*}{10.0cm}(0.1cm,0.8cm)
 \begin{figure}
     \centering
     \includegraphics[scale=0.4]{Figures/sigma_grid.pdf}
@@ -292,20 +209,19 @@ According to [1]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Absorption}
 \begin{frame}{Optical absorption}
 
 \only<1->{
 \begin{textblock*}{5.0cm}(.2cm,0.8cm)
 \small{
 \begin{equation*}
-    \mathcal{A} = 1 - \mathcal{R} - \Re\!\left\{\sqrt{\frac{\varepsilon_2}{\varepsilon_1}}\right\}\mathcal{T}\,, \quad \mathcal{R} = \left| \frac{\sqrt{\varepsilon_2} - \sqrt{\varepsilon_1} + \frac{\sigma}{\varepsilon_0 c}}{\sqrt{\varepsilon_2} + \sqrt{\varepsilon_1} + \frac{\sigma}{\varepsilon_0 c}} \right|^2\,, \quad \mathcal{T} = \left| \frac{2\sqrt{\varepsilon_1}}{\sqrt{\varepsilon_2} + \sqrt{\varepsilon_1} + \frac{\sigma}{\varepsilon_0 c}} \right|^2\
+    \mathcal{A}_{\mathrm{opt}} = 1 - \mathcal{R} - \frac{\Re\{\sqrt{\varepsilon_2}\}}{\Re\{\sqrt{\varepsilon_1}\}} \mathcal{T}\,, \quad \mathcal{R} = \left| \frac{\sqrt{\varepsilon_2} - \sqrt{\varepsilon_1} + \frac{\sigma}{\varepsilon_0 c}}{\sqrt{\varepsilon_2} + \sqrt{\varepsilon_1} + \frac{\sigma}{\varepsilon_0 c}} \right|^2\,, \quad \mathcal{T} = \left| \frac{2\sqrt{\varepsilon_1}}{\sqrt{\varepsilon_2} + \sqrt{\varepsilon_1} + \frac{\sigma}{\varepsilon_0 c}} \right|^2
 \end{equation*}}
 \end{textblock*}
 }
 
 \only<2->{
-\begin{textblock*}{12.0cm}(0.2cm,2.2cm)
+\begin{textblock*}{12.0cm}(2.0cm,2.2cm)
 \begin{figure}
     \centering
     \includegraphics[scale=0.45]{Figures/absorption_of_omega.pdf}
@@ -314,7 +230,7 @@ According to [1]
 }
 
 \only<3->{
-\begin{textblock*}{7.0cm}(7.5cm,6.3cm)
+\begin{textblock*}{7.0cm}(8.0cm,6.6cm)
 \begin{itemize}
     \item Red-shift of the resonances \\
     \item $2s$ peak higher than $1s$ peak \\
@@ -322,7 +238,7 @@ According to [1]
 \end{itemize}
 \end{textblock*}
 
-\begin{textblock*}{8.0cm}(0.2cm,6.3cm)
+\begin{textblock*}{8.0cm}(0.2cm,6.6cm)
 \begin{itemize}
     \item Tunable absorption 
     \item Non-monotonic behaviour of the absorption
@@ -338,30 +254,30 @@ According to [1]
 \begin{frame}{Absorption peaks}
 
     \only<1->{
-\begin{textblock*}{5.0cm}(.2cm,0.8cm)
+\begin{textblock*}{6.0cm}(.2cm,0.9cm)
 \small{
-    \begin{equation*}
-        \max_{\omega}{\mathcal{A}_{\mathrm{opt}}} = \frac{4 \sqrt{\varepsilon_1} \sigma'}{(\sqrt{\varepsilon_2} + \sqrt{\varepsilon_1} + \sigma')^2}\,,
-    \end{equation*}}
+    \begin{empheq}[innerbox=\fbox]{align}
+        \max_{\omega}{\mathcal{A}_{\mathrm{opt}}} = \frac{4 \sqrt{\varepsilon_1} \sigma'}{(\sqrt{\varepsilon_2} + \sqrt{\varepsilon_1} + \sigma')^2}\,, \omega = E_\nu/\hbar\,, \nu=1s,2s \notag
+    \end{empheq}}
 \end{textblock*}
 }
 
 
 \only<1->{
-\begin{textblock*}{12.0cm}(0.8cm,2.7cm)
+\begin{textblock*}{12.0cm}(0.8cm,2.3cm)
 \begin{figure}
     \centering
-    \includegraphics[scale=0.45]{Figures/absorption_of_beta.pdf}
+    \includegraphics[scale=0.5]{Figures/absorption_of_beta.jpg}
 \end{figure}
 \end{textblock*}
 }
 
 \only<2->{
-\begin{textblock*}{5.0cm}(6.8cm,3.5cm)
+\begin{textblock*}{14.0cm}(0.8cm,6.7cm)
 \begin{itemize}
     \item Tunable absorption 
-    \item Non-monotonic behaviour of the absorption
-    \item Different response for different polarizations
+    \item Non-monotonic behaviour of the absorption peak
+    \item Different response for different polarizations $\Rightarrow$ grid polarizer
 \end{itemize}
 \end{textblock*}
 }
@@ -380,21 +296,22 @@ According to [1]
 
 \only<1->{
 
-\begin{textblock*}{6.0cm}(0.cm,1.5cm)
+\begin{textblock*}{6.0cm}(0.cm,1.2cm)
 \begin{center}
 \vspace{-0.5cm}
-\hspace{1.5cm}\begin{tikzpicture}[baseline={(0, -2.0)},scale=1.7,>=Stealth]
+\hspace{1.5cm}
+\begin{tikzpicture}[baseline={(0, -2.0)},scale=1.5,>=Stealth]
 \def\r{0.2cm}
-
+\definecolor{darkgreen}{RGB}{65,117,5}
 \begin{scope}[xshift=-7.*\r,yshift=0]
 
-\draw[black] (2.5*\r,3.7*\r) node {Transverse Electric (TE)};
+\draw[black] (2.5*\r,4.5*\r) node {Transverse Electric (TE)};
 
-\draw[black] (2.5*\r,-2.9*\r) node {$\text{Im}\{\sigma(\omega)\}<0$};
+\draw[black] (2.5*\r,-3.1*\r) node {\small$\text{Im}\{\sigma(\omega)\}<0$};
 
 %wavevector
 \draw[->,color=black] (\r,0) -- ({5*\r},0);
-\draw[black] (2.5*\r,-0.5*\r) node {$\vec{q}$};
+\draw[black] (2.5*\r,-0.7*\r) node {$\vec{q}$};
 
 %Electric field
 \draw[color=red!80!black](0,0) circle (\r);
@@ -403,29 +320,29 @@ According to [1]
 \draw[red!80!black] (0.,-1.7*\r) node {$\vec{E}$};
 
 %Magnetic field
-\draw[->,color=green!80!black] ({\r*cos(20)},{\r*sin(20)}) -- ({6*\r*cos(20)},{6*\r*sin(20)});
-\draw[green!80!black] ({-0.2*\r+6*\r*cos(20)},{0.6*\r+6*\r*sin(20)}) node {$\vec{H}$};
+\draw[->,color=darkgreen] ({\r*cos(20)},{\r*sin(20)}) -- ({6*\r*cos(20)},{6*\r*sin(20)});
+\draw[darkgreen] ({-0.2*\r+6*\r*cos(20)},{0.8*\r+6*\r*sin(20)}) node {$\vec{H}$};
 \end{scope}
 
-\begin{scope}[shift={(.5cm,0cm)}]
+\begin{scope}[shift={(1.3cm,0cm)}]
 
-\draw[black] (2.5*\r,3.7*\r) node {Transverse Magnetic (TM)};
-\draw[black] (2.5*\r,-2.9*\r) node {$\text{Im}\{\sigma(\omega)\}>0$};
+\draw[black] (2.5*\r,4.5*\r) node {Transverse Magnetic (TM)};
+\draw[black] (2.5*\r,-3.1*\r) node {\small$\text{Im}\{\sigma(\omega)\}>0$};
 
 %wavevector
 \draw[->,color=black] (\r,0) -- ({5*\r},0);
-\draw[black] (2.5*\r,-0.5*\r) node {$\vec{q}$};
+\draw[black] (2.5*\r,-0.7*\r) node {$\vec{q}$};
 
 
 %Magnetic field
-\draw[color=green!80!black](0,0) circle (\r);
-\draw[color=green!80!black](-{\r*sqrt(2)/2},-{\r*sqrt(2)/2}) -- ({\r*sqrt(2)/2},{\r*sqrt(2)/2});
-\draw[color=green!80!black](-{\r*sqrt(2)/2},{\r*sqrt(2)/2}) -- ({\r*sqrt(2)/2},-{\r*sqrt(2)/2});
-\draw[green!80!black] (0.,-1.7*\r) node {$\vec{H}$};
+\draw[color=darkgreen](0,0) circle (\r);
+\draw[color=darkgreen](-{\r*sqrt(2)/2},-{\r*sqrt(2)/2}) -- ({\r*sqrt(2)/2},{\r*sqrt(2)/2});
+\draw[color=darkgreen](-{\r*sqrt(2)/2},{\r*sqrt(2)/2}) -- ({\r*sqrt(2)/2},-{\r*sqrt(2)/2});
+\draw[darkgreen] (0.,-1.7*\r) node {$\vec{H}$};
 
 %Electric field
 \draw[->,color=red!80!black] ({\r*cos(20)},{\r*sin(20)}) -- ({6*\r*cos(20)},{6*\r*sin(20)});
-\draw[red!80!black] ({-0.2*\r+6*\r*cos(20)},{0.6*\r+6*\r*sin(20)}) node {$\vec{E}$};
+\draw[red!80!black] ({-0.2*\r+6*\r*cos(20)},{0.8*\r+6*\r*sin(20)}) node {$\vec{E}$};
 \end{scope}
  
 
@@ -444,7 +361,7 @@ According to [1]
 \end{textblock*}
 
 
-\begin{textblock*}{8.0cm}(5.7cm,.5cm)
+\begin{textblock*}{8.0cm}(7.7cm,.2cm)
 \begin{center}
     \includegraphics[scale=0.2]{Figures/polariton_propagation.png}
 \end{center}
@@ -454,26 +371,26 @@ According to [1]
 }
 
 \only<2->{
-\begin{textblock*}{6.0cm}(-1.4cm,4.cm)
+\begin{textblock*}{6.0cm}(-0.5cm,3.9cm)
 
 \begin{equation*}
-   \scalebox{.7}{$ \kappa_1 + \kappa_2 - i \omega \mu_0 \sigma_{yy}(\omega) = 0$}
+    \scalebox{.8}{$\kappa_1 + \kappa_2 - i \omega \mu_0 \sigma_{yy}(\omega) = 0$}
 \end{equation*}
 
 \end{textblock*}
 
-\begin{textblock*}{6.0cm}(2.0cm,4.cm)
+\begin{textblock*}{6.0cm}(3.0cm,3.9cm)
 
-\begin{equation*}
-   \scalebox{.7}{$  \frac{\varepsilon_1}{\kappa_1} + \frac{\varepsilon_2}{\kappa_2} + i  \frac{\sigma_{xx} (\omega)}{\varepsilon_0 \omega} = 0 $}
-\end{equation*}
+\begin{empheq}[innerbox=\fbox]{align}
+    \scalebox{.8}{$\frac{\varepsilon_1}{\kappa_1} + \frac{\varepsilon_2}{\kappa_2} + i  \frac{\sigma_{xx} (\omega)}{\varepsilon_0 \omega} = 0$} \notag
+\end{empheq}
 
 \end{textblock*}
 
-\begin{textblock*}{8.0cm}(5.5cm,4.cm)
+\begin{textblock*}{8.5cm}(5.8cm,3.9cm)
 
 \begin{equation*}
-   \scalebox{.7}{$ \kappa_j = \sqrt{q^2 - \varepsilon_j \omega^2/c^2},\, j=1,2$ (optical permittivities)}
+    \scalebox{.8}{$\kappa_j = \sqrt{q^2 - \varepsilon_j(\omega) \frac{\omega^2}{c^2}},\, j=1,2$}
 \end{equation*}
 %stress that we're looking only at TM modes
 %stress different degrees of confinement micrometer vs nanometer
@@ -481,30 +398,11 @@ According to [1]
 }
 
 \only<3->{
-\begin{textblock*}{14.0cm}(5.7cm,4.5cm)
+\begin{textblock*}{14.0cm}(0.7cm,4.4cm)
 \begin{center}
-    \includegraphics[scale=0.2]{Figures/polariton_dispersion_relation.pdf}
+    \includegraphics[scale=0.5]{Figures/polariton_dispersion_relation.jpg}
 \end{center}
 \end{textblock*}
 }
     
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Summary}
-
-\begin{itemize}
-\setlength{\itemsep}{10pt}
-    \item hBN as a promising material for UV polaritonics 
-    \item 1D superlattice with tunable periodicity: from deep-UV to the visible
-    \item Tunable absorption
-    \item Different response for different polarizations
-    \item Confined EM modes with tunable frequency
-\end{itemize}
-
-\begin{textblock*}{12.0cm}(.cm,7.5cm)
-\centering{Consult arXiv manuscript: "Tunable Exciton--polaritons in band-gap engineered hexagonal boron nitride", \underline{P. Ninhos}, C. Tserkezis, N.A. Mortensen, N.M.R. Peres, 2312.01913 (2023)}
-\end{textblock*}
-
 \end{frame}

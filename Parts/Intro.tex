@@ -6,49 +6,83 @@
 \section{Introduction to Excitons in 2D materials}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Context: Excitons and \underline{Screening}}
+\begin{frame}{Optical excitations in matter}
+    \centering
+    \input{Figures/optical_excitations.tex}
+\end{frame}
+
+\subsection{Context}
+
+\begin{frame}{Excitons in photonics}
+
+\begin{textblock*}{5.0cm}(0.2cm,1.2cm)
+Relevant for:
+\end{textblock*}
+
+\begin{textblock*}{5.0cm}(0.2cm,2.0cm)
+    \,\,\,\,\,\,\,Light--matter interactions
+    \begin{figure}
+        \includegraphics[scale=0.3]{Figures/light_matter.png}
+    \end{figure}
+    \,\,\,\,\,\,\, \small J. Shang et al. - ACS Photonics \\ 
+    \hspace{1.4cm} 2023, 10, 2064--2077
+    % mainly in 2D dimensions, constitute a playground to study light−matter interactions, many-body effects and their applications in photonics
+\end{textblock*}
+
+\begin{textblock*}{5.0cm}(5.2cm,2.0cm)
+    \,\,\,\,\,\,\, Quantum Light Sources
+    \begin{figure}
+        \includegraphics[scale=0.25]{Figures/photon_emission.png}
+    \end{figure}
+    \,\,\,\,\,\,\, \small S. Fiedler et al. - 2D Mater. \\ 
+    \hspace{1.6cm} 10 021002 (2023)
+    % tunable photon emission from 2D semiconductors
+\end{textblock*}
+
+\begin{textblock*}{5.0cm}(10.5cm,2.0cm)
+    \,\,\,\,\,\,\, Optical Communication
+    \begin{figure}
+        \includegraphics[scale=0.3]{Figures/communications.png}
+    \end{figure}
+    \,\,\,\,\,\,\, \small Yi Zhu et al. - Nano Letters \\
+    \hspace{1.8cm} 2025, 25 (21)
+    % improve optical communication systems
+\end{textblock*}
+
+\end{frame}
+
+\begin{frame}{Excitons in two-dimensional materials}
         \begin{columns}[T]
 
             \column{.5\linewidth}
             \onslide<1->{
-                \textbf{...in a crystal.}
+                \textbf{For a typical 3D material (e.g., GaAs)}
+                \begin{equation*}
+                    E_{b,n} = - \frac{R^*}{n^2}
+                \end{equation*}
+
+                \begin{equation*}
+                    \label{eq:Rydberg_modified}
+                    R^* = \frac{2 \mu_{eh}^2 e^4}{\hbar^2 (8 \pi \varepsilon)^2}
+                \end{equation*}
+            }
+            \column{.5\linewidth}
+            \onslide<2->{
+                \textbf{\,\,\,\,\, But for a 2D (insulating) material}
 
                 \begin{figure}
                     \centering
                     \includegraphics[scale=1.]{Figures/hBN_permittivity.pdf}
                 \end{figure}
             }
-
-            \column{.5\linewidth}
-            \onslide<2->{
-                \textbf{For a typical 3D material (e.g., GaAs)}
-                \begin{equation}
-                    E_{b,n} = - \frac{R^*}{n^2}
-                \end{equation}
-
-                \begin{equation}
-                    \label{eq:Rydberg_modified}
-                    R^* = \frac{2 \mu_{eh}^2 e^4}{\hbar^2 (8 \pi \varepsilon)^2}
-                \end{equation}
-            }
+            
         \end{columns}
 
 
         \begin{columns}[T]
 
-            \column{.4\linewidth}
-            \onslide<4->{
-                \textbf{But for a 2D (insulating) material}
-            }
-            \onslide<5->{
-                \begin{itemize}
-                    \item Excitonic series $\neq$ Rydberg series
-                    \item Dielectric "constant" $\varepsilon = \lim_{q \to 0} \lim_{\omega \to 0} \varepsilon (q, \omega) = 1$
-                    \item $\varepsilon (q)$ highly dependent on $q$ (non-locality)
-                \end{itemize}
-            }
             \column{.6\linewidth}
-            \only<6>{
+            \only<4>{
                 \vspace{-0.4cm}
                 \begin{figure}
                     \centering
@@ -57,17 +91,141 @@
                 \vspace{-0.4cm}
                 Alexey Chernikov et al., Phys. Rev. Lett. 113, 076802 (2014)
             }
-            \only<7>{
+            \only<5>{
                 \begin{itemize}
                     \item "Theoretical Methods for Excitonic Physics in 2D Materials", Maurício et al. Phys. Status Solidi B, 259: 2200097, 2022 (tutorial)
                     \item "Diele. screening in 2D insu.: Implications for excitonic and impurity states in graphane", Cudazzo et al., Phys. Rev. B \textbf{84}, 085406, 2011
                 \end{itemize}
             }
+            
+            \column{.4\linewidth}
+            \onslide<3->{
+                \begin{itemize}
+                    \item Excitonic series $\neq$ Rydberg series
+                    \item Dielectric "constant" $\varepsilon = \lim_{q \to 0} \lim_{\omega \to 0} \varepsilon (q, \omega) = 1$
+                    \item $\varepsilon (q)$ highly dependent on $q$ (non-locality)
+                \end{itemize}
+            }
+            
 
         \end{columns}
 
 \end{frame}
 
+\subsection{Motivation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Hexagonal boron nitride in photonics}
+
+\only<1->{
+\begin{textblock*}{8.0cm}(0.2cm,1.5cm)
+\begin{itemize}
+    \item Low defects density [1] %People realized that Luminescent defect centers in hBN were a promising source for SPEs. Defects in hBN are known to reduce phonon lifetimes, and, thus, are detrimental to its use for IR nanophotonics, but such defects are at the heart of hBN’s promise as a single-photon emitter.
+    \item Ballistic transport  in graphene [2] %as an encapsulating material, hBN enhances carriers mobility in graphene. This reports ballistic transport up to 28 micrometer
+    \item Hyperbolic material (MIR) [3]
+    \item Polaritonics in the MIR [4] %hBN interesting on its own as the active material. In this experimental work phonon-polaritons were excited. They used s-snom to measure the propagation length of phonon-polaritons.
+\end{itemize}
+\end{textblock*}
+
+
+\begin{textblock*}{5.0cm}(6.8cm,1.cm)
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{Figures/ballistic_transport.PNG}
+\end{figure}
+\end{textblock*}
+
+\begin{textblock*}{5.0cm}(7.7cm,2.5cm)
+[2]
+\end{textblock*}
+
+\begin{textblock*}{5.0cm}(10.4cm,1.1cm)
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{Figures/phonon_polaritons.PNG}
+\end{figure}
+\end{textblock*}
+
+\begin{textblock*}{5.0cm}(12.5cm,2.4cm)
+[4]
+\end{textblock*}
+
+\begin{textblock*}{5.0cm}(.2cm,3.5cm)
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{Figures/hBN_on_quartz.PNG}
+\end{figure}
+\end{textblock*}
+
+\begin{textblock*}{5.0cm}(9cm,3.0cm)
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{Figures/PL_hBN.PNG}
+\end{figure}
+\end{textblock*}
+
+\begin{textblock*}{5.0cm}(2.cm,7.0cm)
+[5,6]
+\end{textblock*}
+
+\begin{textblock*}{5.0cm}(9.7cm,4.5cm)
+[5,6]
+\end{textblock*}
+
+\begin{textblock*}{8.0cm}(.2cm,7.5cm)
+\scriptsize{[1] I.H. Abidi et al., \textit{Adv. Opt. Mater.} 7, 1900397 (2019)} \\
+\scriptsize{[2] L. Banszerus et al., \textit{Nano Lett. } 16, 1387–1391 (2016)} \\
+\scriptsize{[3] J. D. Caldwell et al., \textit{Nat. Rev. Mat.} 4, 5221 (2019)}
+\end{textblock*}
+\begin{textblock*}{14.0cm}(7.0cm,7.5cm)
+\scriptsize{[4] D. Rizzo et al., \textit{Nano Lett. } 23, 18, 8426–8435 (2023)} \\
+\scriptsize{[5] J. Henriques et al., \textit{J. Phys.: Cond. Matter} 32, 025304 (2019)} \\
+\scriptsize{[6] C. Elias et al., \textit{Nat. Comm.} 10, 2639 (2019)} %Colla between Laboratory Charles Coulomb Montpellier and Nottingham
+\end{textblock*}
+
+}
+\end{frame}
+
 \begin{frame}{Motivation}
-    No motivation
+    \begin{columns}[T]
+
+        \column{.5\linewidth}
+        \only<1->{
+            \textbf{Rytova--Keldysh model}
+            \begin{equation*}
+                \varepsilon_{\mathrm{RK}} (q) = 1 + r_0 q
+            \end{equation*}}
+        \only<2->{
+            \begin{itemize}
+                \item Intuitive
+                \item Analytical expression (also for $V_{\mathrm{RK}}(r)$)
+            \end{itemize}}
+        \onslide<3->{
+            \begin{itemize}
+                \item \textcolor{red}{Excitons are determined numerically}
+                \item \textcolor{red}{Questionable for layered systems}
+                \item \textcolor{red}{Screening parameter $r_0$ obtained from \textit{ab initio} methods either way}
+            \end{itemize}
+        }
+
+        \column{.5\linewidth}
+        \onslide<3->{
+        \textbf{Full numerical \textit{ab initio}}
+            \begin{equation*}
+                \varepsilon_{\vectormath{G} \vectormath{G}'} (\vectormath{q}) = \delta_{\vectormath{G} \vectormath{G}'} - v_c(\vectormath{q} + \vectormath{G}) \chi^0_{\vectormath{G} \vectormath{G}'}(\vectormath{q})
+            \end{equation*}}
+        \onslide<4->{
+            \begin{itemize}
+                \item Works for any kind of system
+                \item Several packages available (BerkeleyGW, Yambo, VESPA, etc...)
+                \item Captures screening in its $q$ entirety
+            \end{itemize}}
+        \onslide<5->{
+            \begin{itemize}
+                \item \textcolor{red}{Computationally heavy}
+                \item \textcolor{red}{Technically involved/Less accessible}
+                \item \textcolor{red}{Systems are always 3D}
+            \end{itemize}
+        }
+    \end{columns}
 \end{frame}
