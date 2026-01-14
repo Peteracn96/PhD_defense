@@ -34,7 +34,7 @@
         For an insulator/semiconductor
 
         \begin{empheq}[innerbox=\fbox]{align}
-            \chi^0_{\bG \bG'} (\bq) = \frac{2}{\mathcal{A}} \sum_{vc} \sum_{\bk \sigma} \frac{\bra{c,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{v,\bk  + \bq} \! \bra{v,\bk  + \bq} \ee^{\ii(\bq + \bG') \vdot \br} \ket{c,\bk}}{\epsilon_{v\bk + \bq} - \epsilon_{c\bk} }
+            \chi^0_{\bG \bG'} (\bq) = \frac{2}{\mathcal{A}} \sum_{vc} \sum_{\bk \sigma} \frac{\bra{c,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{v,\bk  + \bq} \! \bra{v,\bk  + \bq} \ee^{\ii(\bq + \bG') \vdot \br} \ket{c,\bk}}{\epsilon_{v\bk + \bq} - \epsilon_{c\bk} } \notag
         \end{empheq}
         [1] Jack Deslippe et al., “BerkeleyGW: A massively parallel computer package for the calculation of the quasiparticle and optical properties of materials and nanostructures”, Computer Physics Communications 183.6 (2012)
     }
@@ -299,7 +299,7 @@
     and (albeit in \textit{ab initio} $X$ uses the bare potential $v_c$)
     \vspace{-0.3cm}
     \begin{equation*}
-        X_{vc, v' c'}(\bk,\bk',\bQ) = \int_{\mathcal{A}} \dr \int_{\mathcal{A}} \dr' \psi^*_{c,\bk+\bQ}(\br) \psi^*_{v',\bk'}(\br') W(\br,\br') \psi_{v,\bk}(\br) \psi_{c',\bk'+\bQ}(\br')
+        X_{vc, v' c'}(\bk,\bk',\bQ) = \int_{\mathcal{A}} \dr \int_{\mathcal{A}} \dr' \psi^*_{c,\bk+\bQ}(\br) \psi^*_{v',\bk'}(\br') W(\br,\br') \psi_{v,\bk}(\br) \psi_{c',\bk'+\bQ}(\br') \to 0
     \end{equation*}
 
 \end{frame}
@@ -312,8 +312,8 @@
         \begin{tabular}{cc||cccccc}
             \cline{3-8}
             &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$}                                            \\ \cline{3-8}
-            &                                                & 0                          & 3 (8480)               & 5.1 (job 8478)              & 6   (job 7823)           & 8                      & 9                       \\ \cline{8-8} \hline \hline
-            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 4.14935                & 5.5566                      & 5.75416                  & 6.011076               & XXX        \\
+            &                                                & 0                          & 3                & 5.1              & 6              & 8                      & 9                       \\ \cline{8-8} \hline \hline
+            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 4.14935                & 5.5566                      & 5.75416                  & 6.011076               & --        \\
             \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & 2.503138               & 4.380231                    & 3.803146                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
             \multicolumn{1}{|c|}{}                           & 5.1 & X                    & \multicolumn{1}{c|}{X} & 2.797365                    & 2.99418                  & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
             \multicolumn{1}{|c|}{}                           & 6 & X                      & X                      & \multicolumn{1}{c|}{X}      & 2.83405                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
@@ -359,6 +359,8 @@
     At least apparent numerical convergence
 \end{frame}
 
+\subsection{Quasi-2D approach for screening}
+
 \begin{frame}{The quasi-2D approach for screening}
     Introducing the bare Coulomb potential in the mixed $(\bq,z)$-representation
 
@@ -396,9 +398,10 @@
 \begin{frame}{The Q2D dielectric function: numerical results}
     For hBN and \ch{MoS2} CRYSTAL models
     \onslide<1->{
+    \vspace{-0.3cm}
     \begin{figure}[h]
          \centering
-         \includegraphics[width=0.6\textwidth]{Figures/epsilon_M_vs_q_hBN_&_MoS2.pdf}
+         \includegraphics[width=0.55\textwidth]{Figures/epsilon_M_vs_q_hBN_&_MoS2.pdf}
      \caption{2D~effective dielectric function of monolayer hBN and \ch{MoS2}, computed by our strict 2D~and quasi-2D approaches, in dashed red and continuous blue lines, respectively. For comparison, the \textit{ab-initio}~ones from Latini and Nano Lett. 2015, 15, 7, 4616–4621 are represented as well. We applied $G_c = 3.0$~\AA$^{-1}$. We used $\dd_{\perp}=3.33$~\AA.}
     \end{figure}}
 \end{frame}

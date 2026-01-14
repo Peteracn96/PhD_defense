@@ -1,69 +1,237 @@
+%%%%%%%%%%%%%%% INTRO %%%%%%%%%%%%%%%%%%%%
+Slides 4,5,6,7,8
 
-%%%%%%%%%%%%%%%WHAT IS SCREENING%%%%%%%%%%%%%%%%%%%%
-Slide 6
+SLIDE 4
 
--Here I present the concept of screening, which can appear in different contexts.
+In the context of photonics and optics, we are interested in investigating the optical excitations of matter and their applications
 
--For example, in an atom, we say that the core electrons screen the Coulomb 
-attraction between the ion and the outer valence electrons, which see an effective 
-nuclear charge smaller than that of the nucleus, given by an effective nuclear number
-Zeff.
+Optics encompasses:
+    Lasing,
+    Polaritonics,
+    Sensoring,
+    others
 
--In this way, the potential felt by the outer electrons due to the nucleus is a screened 
-potential, smaller in magnitude than the initial bare Coulomb potential.
+Within solid matter and a classical description of light--matter int., photonics or classical electrodynamics
+we typically divide materials into Metals or Dielectrics
 
--In a very different context, the case of plasmas, the ionic species attract the not so 
-energetic free electrons to gather around them, leading due a diminished positive ionic 
-charge. The electrostatic potential created by these charges is then screened with a 
-screening length parameter denoted by lambda_D, the Debye length. For further reading
-you can consult the textbook by Francis Chen
+Metals are characterized by
+-Having free electronic charges
+-Which makes them good conductors
+-Capable of supporting collective electronic oscillations called plasmons: which underlie the entire field of plasmonics
 
--In the context relevant to us, we can also speak of screening in crystaline solids,
-where the screening is captured by the dielectric function. It's clearly a 2-point
-function in space, as the what happens here at this point affects what happens at
-this other point. So let's dwell on the dielectric function
-%%%%%%%%%%%%%%%THE DIELECTRIC FUNCTION%%%%%%%%%%%%%%
-Slide 8
+Dielectrics
+-have bound charges
+-Bad at conducting electricity
+-optical excitations consist of the bound charges oscillating around their equillibrium position, classicaly speaking
+-In this dissertation we focus on the dipolar excitation called exciton: bound electron-hole states, can only be explained in the light of quantum principles,
+confer strong optical resonances to insulators and semiconductors
 
--How can the dielectric function be calculated?
+SLIDE 5
 
--Many approaches depending on the context, to arrive at the same end results.
+Excitons are important for:
 
--1st, Self-consistent framework
-Within a self-consistent framework, one can define an interacting polarizability 
-as a response to the external potential, and an independent particle polarizability 
-function as a response to the total perturbing potential. Under the approximation of 
-neglecting electronic correlations and exchanges, we get a relation between the 
-full polarizability and the independent particle one, which leads to the Random 
-Phase Approximation dielectric function, which is the one we compute in this work. 
-From now on, Random Phase Approximation will go by RPA.
+-Enhacing and studying light--matter interactions, constituting a playground for better understanding many-body effects in materials and respective applications
 
-The expression for the independet particle polarizability can be obtained through 
-basic time-dependent perturbation theory calculations.
+-To enginneer quantum light sources, such as single-photon emitters
 
--2nd Many-Body Perturbation Theory
+-Improve the performance of optical communication systems
 
-Here the polarizability, the screened potential and the self-energy are written in 
-diagrammatic expansions. Upon a resummation of the diagrams for the self-energy, 
-where only the most divergent ones are retained, the bubble diagrams, are kept 
-in the sum. In this way we obtain the RPA self-energy. Something similar can be 
-done for the screened potential, and a resummation of the diagrams for the 
-polarizability allow for a simple expression for the dielectric function.
-In this context the most used polarizability is the RPA irreducible polarizability,
-which coincides with the bubble diagram, also called the Hartree diagram or Hartree term.
+SLIDE 6
 
+In 2D materials, excitons are a field by itself
+
+-3D systems, excitons well described by the Rydberg series with modified mass and permittivity
+
+-But for 2D materials, where epsilon is two-point function depending on r and r' separately, exciton series != Rydberg series,
+improve the theory
+
+-Account for non-local effects in the dielectric response of the material
+
+-Back in 2014 for WS2 exciton series != Rydberg series, improved theory improves the agreement
+
+-Extensive literature for excitons in 2D
+
+SLIDE 7
+
+-A typical example of gapped 2D material is hexagonal boron nitride
+
+-Extensively used in photonics in its bulk form
+
+-In bulk it's interesting in photonics for being a hyperbolic material in the Mid Infra-red
+
+-However, as a monolayer, exhibits a sharp optical resonance in the UV, can only be explained by excitonic effects
+
+SLIDE 8
+
+-One motivation, besides the applications of excitons in 2D material, is a description of screening beyond the Rytova--Keldysh model, which is classical
+
+
+Rytova-Keldysh
+Advantages:
+- Simple model, Taylor series up to leading order in q
+- Analytical V(r)
+
+Disadvantages
+- Even for the simplest description of excitons, no analytical solution has been found due to the complicate form of the potential in real space
+- Not appropriate for systems that are not atomically thin
+- r0 has to be determined from first-principles after all
+
+Ab-initio
+Adv.:
+-Any kind of system, single or many layers
+-Plenty of packages to choose from
+-Exact q-dependence of dielectric properties of any periodic system, one can even include dynamical effects
+
+Disadvantages:
+-Discarded in second-principles works for being too heavy
+-Theorical basis is involded and not trivial (many-body perturbation theory)
+-As far as we know, there is no direct 2D of implementation for screening,
+2D systems are artificially made 3D to run the code
+
+During the PhD studies we have found a middle ground to discuss later in this presentation
+
+
+%%%%%%%%%%%%%%% hBN Superlattice %%%%%%%%%%%%%%%%%%%%
+SLIDE 10
+
+-In this part we discuss the results in this publication, where we investigate a hBN monolayer deposited on a quartz substrate, in contact with a patterned grating creating a 1D periodic electrostatic potential,
+ that we model by a single-harmonic oscillating potential, on top of a Dirac Hamiltonian with mass to describe the low-energy properties of hBN
+
+-Through an unitary transformation, we obtain an effective Hamiltonian with renormalized parameters, which induces an anisotropy in the dispersion, and a reduced bandgap
+
+-Given in terms of the dimensionless parameter beta
+
+
+SLIDE 11
+
+-To determine the excitonic effects in this new material, we adopt a Wannier description of the electron-hole two-body problem
+
+-The excitonic states and energies are obtained using the variational method with selected trial wavefunctions for the first four states
+
+-We also examined the electronic bandgap, which is reduced as we increase beta
+
+-The binding energies typically decrease with increasing beta, the anisotropy lifts the degeneracy between the x and y states
+
+SLIDE 12
+
+-In the excitonic optical conductivity, modeled by a sum of Lorentzians according to Thomas Pedersen, and consider two light-polarizations,
+along the x direction along the periodicity of the potential, and the y direction along which the potential is invariant
+
+-We examine the real and imaginary parts of the conductivity separately, in the top and bottom panels,
+-On the left for x polarization, on the right for y polarization
+
+-Where we can see that for increasing beta, in each panel from right to left, enhanced resonances for x pol. but diminished for y polar.
+- beta=2.3 is qualitatively different for x pol. as Im{sigma} has only 1 zero, relevant later on.
+
+SLIDE 13
+
+-Conducting surface leads to radiation absorption by the material that we also calculated, to observe that
+
+-Can tune the absorption by tuning the potential;
+-Induce a 2s peak higher than a 1s peak, unusual;
+-To better understand the evolution in the absorption resonances, we plot for varying beta the absorption maxima
+-Different transmission of light for different polarizations, working principle of a grid polarizer
+-Non-trivial dependence of the absorption for different polarizations and excitonic states
+
+SLIDE 14
+
+-Finally, we study the emergent polaritonic effects of the nanostructred hBN layer
+-The polariton, which is a surface confined EM mode with 2 different possible polarizations
+-Focusing on the TM modes, propagation along the x directions;
+-We obtained light modes for three different values of beta, with dispersion very distinct from that of free light with much higher confinement degrees
+-Specially the most anisotropic case, with a dispersion back-bend due to the peak in the conductivity around the resonance due to the 2s state
+
+%%%%%%%%%%%%%%% THE DIELECTRIC FUNCTION %%%%%%%%%%%%%%
+In this part we will better understand the limits in the screening properties of insulators leading to the RK model using the Xatu code.
+
+SLIDE 17
+-We briefly revisit the microscopic theory for the dielectric function,
+whose form for the potential depends on the dimensionality of the system
+
+-For convenience, we used the symmetrized version of the diele. f. as explained in the thesis,
+and the expression for the polarizability is also 2D
+
+
+SLIDE 18
+
+-The numerical dielectric function is used to model the screened potential;
+
+-From which we can define a macroscopic 2D diele. f. as
+-and define a macros. potential in the standard way
+
+-We will see that in the low-q limit of the macr. diele. f. we recover the RK model
 -3rd Linear response
 
-The polarizability is the density-density response function, pertains to the response
-to longitudinal oscillations of the electric field. There are other response functions,
-such that the current-current response function, which leads to the optical conductivity
-that pertains to the response to electromagnetic oscillations, as in the previous work of
-mine where we computed the excitonic optical response of hBN, but not to be confunded with
-the one computed in this work.
+SLIDE 19
 
-All in all, we all compute the same thing at the end. One of the first and most important
-works about the dielectric function in solids is this by Stadler.
+-Unlike usually done in ab-initio implementations, where a plane-wave basis is used for the single-particle states
+-Herein we work in a basis of localized orbitals, atomic or Wannier, where we use the LCAO to write the Bloch states
 
-Slide 9
+-Single-particle eigenstates of the Hamiltonian, which in a basis of localied orbitals, with the Tight-binding approximation,
 
-Before presenting my results, we look at useful expressions to compute the dielectric function. 
+-The eigenstates eigenenergy identity is translated to an eigenvector eigenvalue identity for the Bloch Hamiltonian,
+representing the Hamiltonian of the crystal and the eigenvectors, the capital C's, store the TB coefficients
+
+SLIDE 20
+
+- We can quite efficiently compute the matrix elements of the polarizability by evaluating the plane-wave matrix elements
+in the point-like orbital approximation, where no info about the atomic orbitals enters, so that the Fourier transform is
+evaluated on the fly instantly
+
+SLIDE 21
+
+- To compute the excitons, as pre-processing steps
+
+1)...
+2)...
+3)...
+4) Finally compute the exciton
+
+SLIDE 22
+-Test example
+-Monolayer hBN again, this time with a DFT model in a basis of localized Gaussian orbitals, obtained by DFT calculations using the CRYSTAL package
+
+SLIDE 23
+-We analise how does the inverse dielectric matrix behave as we increase its size
+-We have in each panel a selected element of the inverse dielectric matrix, to see that it converges quite slowly
+
+-Nonetheless, let us proceed with what we have.
+
+SLIDE 24
+-Trying to reproduce results in the literature
+-We compare the 2D macroscopic dielectric function with our implementation and an ab initio one
+to see good agreement, especially for lower values of q
+
+Also, we get the RK model back, and an universal fact of e^2D(a)
+
+SLIDE 25
+In comparison with ab initio methods to summarize
+
+SLIDE 26
+To see the effect of the numerical screening in the calculations,
+we incorporate the numerical inverse dielectric matrix in the calculation of the interaction terms
+in the Bethe-Salpeter equation, describing the excitonic problem in momentum space
+We discard the exchange term after all
+
+SLIDE 27
+-We have in the excitonic binding energy of the excitonic GS a competition between the cutoff for the dielectric matrix and the cutoff for the sum in D in the previous slide
+
+-Fixing G^X_c = 0, the binding energy increases-> due to overscreening in the interaction
+-Some columns E_X converges fixing the size of the dielectric matrix and including more terms in the sum, however not in general
+-But in the diagonal elements we see a convergence, at least apparently
+
+SLIDE 28
+-Something similar for MoS2
+
+SLIDE 29
+-We can improve the dielectric response by adopting a quasi-2D approach
+
+SLIDE 30
+-We can define an eff. 2D macros. diele. f. by averaging along the monolayer thickness
+
+-And show that the strict 2D diele. f. is the Q2D one in the 0 thickness limit
+
+SLIDE 31
+-To see that the Q2D result is in excellent agreement with the ab initio one
+
+SLIDE 33
