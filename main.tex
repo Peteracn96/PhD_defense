@@ -69,8 +69,6 @@
 
 \definecolor{brass}{rgb}{0.71, 0.65, 0.26}
 
-\usepackage{empheq}
-
 \newcommand{\pnl}[1]{\textbf{#1}}
 
 
@@ -109,6 +107,13 @@
     \end{frame}
 }
 
+\makeatletter
+\setbeamertemplate{block title}{
+    \begin{beamercolorbox}[wd=\textwidth,sep=0.8ex,center]{block title}
+        \usebeamerfont*{block title}\insertblocktitle
+    \end{beamercolorbox}
+}
+\makeatother
 
 \begin{document}
 \selectlanguage{english}

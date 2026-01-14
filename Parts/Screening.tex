@@ -236,27 +236,20 @@
 \end{frame}
 
 \begin{frame}{Macroscopic dielectric function: 2D vs. \textit{Ab initio}}
-    Herein \textcolor{blue}{Improve this slide w/ blocks}
+    \setbeamercovered{transparent=15}
     \begin{columns}
         \column{0.49\textwidth}
+        \vspace{-6.8cm}
         \onslide<1->{
-        \vspace{-6cm}
-
-            \begin{equation*}
-                \varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \frac{e^2}{2 |\bq + \bG| \varepsilon_0} \chi^0_{\bG \bG'}(\bq)
-            \end{equation*}
-            
-            with $\langle n,\bk |\ee^{-\ii (\bq + \bG) \vdot \br}|n',\bk'\rangle$ computed on the fly, then
-
-            \begin{equation*}
-               \text{invert } \varepsilon_{\bG \bG'} (\bq)
-            \end{equation*}
-
-            and finally, compute the 2D eff.~dielectric function as
-
-            \begin{equation*}
-                \varepsilon^{\mathrm{2D}}(\bq) = \frac{1}{\varepsilon^{-1}_{\bzero \bzero} (\bq)}
-            \end{equation*}}
+            \begin{block}{2D approach}
+            %\vspace{-6cm}
+                \begin{enumerate}\setlength{\itemsep}{10pt}
+                    \item $\varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \frac{e^2}{2 |\bq + \bG| \varepsilon_0} \chi^0_{\bG \bG'}(\bq)$ \\
+                          w/ $\langle n,\bk |\ee^{-\ii (\bq + \bG) \vdot \br}|n',\bk'\rangle$ computed on the fly
+                    \item invert $ \varepsilon_{\bG \bG'} (\bq)$
+                    \item pick the head element $\varepsilon^{\mathrm{2D}}(\bq) = \frac{1}{\varepsilon^{-1}_{\bzero \bzero} (\bq)}$
+                \end{enumerate}
+        \end{block}}
         
         \column{0.01\textwidth}
         \rule{.1mm}{1.3\textheight}
@@ -264,27 +257,19 @@
         \column{0.49\textwidth}
 
         \onslide<2->{
-            \vspace{-6.0cm}
-            \textit{Ab initio}
-            \begin{equation*}
-                \varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \frac{e^2}{|\bq + \bG|^2 \varepsilon_0} \chi^0_{\bG \bG'}(\bq)
-            \end{equation*}
-
-            with $\langle n,\bk |\ee^{-\ii (\bq + \bG) \vdot \br}|n',\bk'\rangle$ via FFT, then do
-
-            \begin{equation*}
-                \text{invert } \varepsilon_{\bG \bG'} (\bq)
-            \end{equation*}
-
-            after, inverse Fourier transform on $z$ as
-            \vspace{-0.3cm}
-            \begin{equation*}
-                \varepsilon^{-1}_{\bzero \bzero}(\bq,z,z') = \frac{1}{L_{\perp}} \sum_{G_z, G_z'} \ee^{\ii G_z z} \varepsilon^{-1}_{G_z \hat{z} G_z' \hat{z}}(\bq) \ee^{-\ii G_z' z'}
-            \end{equation*}
-
-            and finally $\varepsilon^{\mathrm{2D}}(\bq) = 1/\langle \varepsilon^{-1}_{\bzero \bzero}(\bq,z,z') \rangle$
-
-            Also, $v_c(r) = 1/r\, \Theta(R_c - z)$, with $R_c \to \infty$
+            \vspace{-5.cm}
+            \begin{block}{\textit{Ab initio}}
+            %\vspace{-6.0cm}
+                \begin{enumerate}\setlength{\itemsep}{10pt}
+                    \item $\varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \frac{e^2}{|\bq + \bG|^2 \varepsilon_0} \chi^0_{\bG \bG'}(\bq)$
+                    w/ $\langle n,\bk |\ee^{-\ii (\bq + \bG) \vdot \br}|n',\bk'\rangle$ via FFT
+                    \item invert $ \varepsilon_{\bG \bG'} (\bq)$
+                    \item $\varepsilon^{-1}_{\bzero \bzero}(\bq,z,z') = \frac{1}{L_{\perp}} \sum_{G_z, G_z'} \ee^{\ii G_z z} \varepsilon^{-1}_{G_z \hat{z} G_z' \hat{z}}(\bq) \ee^{-\ii G_z' z'}$
+                    \item $\varepsilon^{\mathrm{2D}}(\bq) = 1/\langle \varepsilon^{-1}_{\bzero \bzero}(\bq,z,z') \rangle$
+                \end{enumerate}
+                \vspace{0.3cm}
+                Also, $v_c(r) = \frac{\Theta(R_c - z)}{r}$, with $R_c \to \infty$
+                \end{block}
         }
     \end{columns}
 \end{frame}
@@ -324,17 +309,17 @@
     \begin{table}[h]
         \caption{This table examines the convergence of the excitonic ground state binding energy with the cutoff for the dielectric matrix, $G_c^{\varepsilon}$, and for the interaction matrix elements, $G_c^X$, always with $G_c^X < G_c^{\varepsilon}$. We have used $N_k=60^2$, $N_c=N_v=1$, and we have excluded the exchange interaction term. For the size of the regularization region, we used the radius $q_0 = 0.6 k_0$, where $k_0$ is the norm of the wavevector(s) closest to the origin. All values are in eV. $\Delta = 2.08366$~eV}
         \centering
-            \begin{tabular}{cc||cccccc}
-                \cline{3-8}
-                &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$ (\AA$^{-1}$)}                                            \\ \cline{3-8}
-                &   & 0                      & 3                      & 4                           & 5                        & 7                      & 8                       \\ \cline{8-8} \hline \hline
-                \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 0.979507               & 1.567935                    & 1.401440                 & 1.951914               & ---        \\
-                \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & 0.756373               & 1.619208                    & 1.785953                 & ---                    & ---          \\ \cline{4-4} \cline{4-4}
-                \multicolumn{1}{|c|}{}                           & 4 & X                      & \multicolumn{1}{c|}{X} & 0.774599                    & 1.105537                 & ---                    & ---          \\ \cline{5-5} \cline{5-5}
-                \multicolumn{1}{|c|}{}                           & 5 & X                      & X                      & \multicolumn{1}{c|}{X}      & 0.778244                 & ---                    & ---          \\ \cline{6-6} \cline{6-6}
-                \multicolumn{1}{|c|}{}                           & 7 & X                      & X                      & X                           & \multicolumn{1}{c|}{X}   & 0.792309               & 1.300835          \\ \cline{7-7}
-                \multicolumn{1}{|c|}{}                           & 8 & X                      & X                      & X                           & X                        & \multicolumn{1}{c|}{X} & 0.799489 \\  \cline{1-2} \cline{1-2} \cline{8-8}
-            \end{tabular}
+        \begin{tabular}{cc||cccccc}
+            \cline{3-8}
+            &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$}                                            \\ \cline{3-8}
+            &                                                & 0                          & 3 (8480)               & 5.1 (job 8478)              & 6   (job 7823)           & 8                      & 9                       \\ \cline{8-8} \hline \hline
+            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 4.14935                & 5.5566                      & 5.75416                  & 6.011076               & XXX        \\
+            \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & 2.503138               & 4.380231                    & 3.803146                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
+            \multicolumn{1}{|c|}{}                           & 5.1 & X                    & \multicolumn{1}{c|}{X} & 2.797365                    & 2.99418                  & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
+            \multicolumn{1}{|c|}{}                           & 6 & X                      & X                      & \multicolumn{1}{c|}{X}      & 2.83405                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
+            \multicolumn{1}{|c|}{}                           & 8 & X                      & X                      & X                           & \multicolumn{1}{c|}{X}   & 2.900768               & 5.811998          \\ \cline{7-7}
+            \multicolumn{1}{|c|}{}                           & 9 & X                      & X                      & X                           & X                        & \multicolumn{1}{c|}{X} & 3.018396 \\  \cline{1-2} \cline{1-2} \cline{8-8}
+        \end{tabular}
     \end{table}
 
     Cell with -- means that the output result does not make physical sense
@@ -374,29 +359,6 @@
     At least apparent numerical convergence
 \end{frame}
 
-\begin{frame}{Excitons in \ch{MoS2}: numerical results}
-
-    \begin{table}[h]
-        \caption{This table examines the convergence of the excitonic ground state binding energy with the cutoff for the dielectric matrix, $G_c^{\varepsilon}$, and for the interaction matrix elements, $G_c^X$, always with $G_c^X < G_c^{\varepsilon}$. We have used $N_k=60^2$, $N_c=N_v=1$, and we have excluded the exchange interaction term. For the size of the regularization region, we used the radius $q_0 = 0.6 k_0$, where $k_0$ is the norm of the wavevector(s) closest to the origin. All values are in eV. $\Delta = 2.08366$~eV}
-        \centering
-            \begin{tabular}{cc||cccccc}
-                \cline{3-8}
-                &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$ (\AA$^{-1}$)}                                            \\ \cline{3-8}
-                &   & 0                      & 3                      & 4                           & 5                        & 7                      & 8                       \\ \cline{8-8} \hline \hline
-                \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 0.979507               & 1.567935                    & 1.401440                 & 1.951914               & ---        \\
-                \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & 0.756373               & 1.619208                    & 1.785953                 & ---                    & ---          \\ \cline{4-4} \cline{4-4}
-                \multicolumn{1}{|c|}{}                           & 4 & X                      & \multicolumn{1}{c|}{X} & 0.774599                    & 1.105537                 & ---                    & ---          \\ \cline{5-5} \cline{5-5}
-                \multicolumn{1}{|c|}{}                           & 5 & X                      & X                      & \multicolumn{1}{c|}{X}      & 0.778244                 & ---                    & ---          \\ \cline{6-6} \cline{6-6}
-                \multicolumn{1}{|c|}{}                           & 7 & X                      & X                      & X                           & \multicolumn{1}{c|}{X}   & 0.792309               & 1.300835          \\ \cline{7-7}
-                \multicolumn{1}{|c|}{}                           & 8 & X                      & X                      & X                           & X                        & \multicolumn{1}{c|}{X} & 0.799489 \\  \cline{1-2} \cline{1-2} \cline{8-8}
-            \end{tabular}
-    \end{table}
-
-    Cell with -- means that the output result does not make physical sense
-
-    At least apparent numerical convergence
-\end{frame}
-
 \begin{frame}{The quasi-2D approach for screening}
     Introducing the bare Coulomb potential in the mixed $(\bq,z)$-representation
 
@@ -404,13 +366,13 @@
         v_{c}(\bq,z-z') =  \frac{e}{2 \epsilon_0 q} \, \ee^{- q|z-z'|}\,,
     \end{equation}
 
-    We can work within a quasi-2D (Q2D) framework, where the dielectric function in the mixed representation as
+    Within a quasi-2D (Q2D) framework, with the dielectric function in the mixed representation as
 
     \begin{equation}
         \varepsilon_{\bG \bG'}(\bq,z,z') = \delta_{\bG \bG'} \delta( z-z')- \frac{e}{2\epsilon_0|\bq +\bG|} \int_{-\infty}^{\infty} \dd z'' \ee^{-|\bq +\bG||z-z''|} \chi^{0}_{\bG \bG'}(\bq,z'',z')
     \end{equation}
 
-    with the $(\bq,z)$-resolved polarizability
+    and with the $(\bq,z)$-resolved polarizability
 
     \begin{equation}
         \chi^{0}_{\bG \bG'}(\bq,z,z') = \int_{\mathcal{A}} \dd \br_{||} \int_{\mathcal{A}} \dd \br_{||}' \, \ee^{-\ii (\bq + \bG) \vdot \br} \chi^{0}(\br,\br') \ee^{\ii (\bq' + \bG') \vdot \br'}
@@ -428,7 +390,7 @@
         \label{eq:Q2D_dielectric_function_zero_thickness_limit}
         \varepsilon_{\bG \bG'}(\bq) = \lim_{\dd_{\perp}\! \to 0} \frac{1}{\dd_{\perp}} \int_{-\dd_{\perp}/2}^{\dd_{\perp}/2} \int_{-\dd_{\perp}/2}^{\dd_{\perp}/2} \varepsilon_{\bG \bG'}(\bq,z,z')\,\dd z\dd z'
     \end{empheq}}
-\onslide<5->{But how does $\bar{\varepsilon}_{\bG \bG'}(\bq)$ improve our dielectric function?}
+\onslide<3->{But how does $\bar{\varepsilon}_{\bG \bG'}(\bq)$ improve our dielectric function?}
 \end{frame}
 
 \begin{frame}{The Q2D dielectric function: numerical results}
