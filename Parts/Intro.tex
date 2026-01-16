@@ -3,12 +3,17 @@
 
 %%%%%%%  INTRODUCTION  %%%%%%%%%
 
-\section{Introduction to Excitons in 2D materials}
+\section{Introduction to Excitons in 2D Materials}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Optical excitations in matter}
-    \centering
-    \input{Figures/optical_excitations.tex}
+% \begin{frame}{Optical Excitations in Matter}
+%     \centering
+%     \input{Figures/optical_excitations.tex}
+% \end{frame}
+
+\begin{frame}{Optical Excitations in Matter}
+   \centering
+    \input{Figures/optical_materials.tex}
 \end{frame}
 
 \subsection{Context}
@@ -20,34 +25,35 @@ Relevant for:
 \end{textblock*}
 
 \begin{textblock*}{5.0cm}(0.2cm,2.0cm)
-    \,\,\,\,\,\,\,Light--matter interactions
+    \,\,\,\,\,\,\, {\color<2>{red} Light--matter interactions}
     \begin{figure}
         \includegraphics[scale=0.3]{Figures/light_matter.png}
     \end{figure}
-    \,\,\,\,\,\,\, \small J. Shang et al. - ACS Photonics \\ 
-    \hspace{1.4cm} 2023, 10, 2064--2077
+    \,\,\,\,\,\,\, \small J. Shang et al. - \textit{ACS Photonics} \\ 
+    \hspace{1.4cm} \textbf{10} 7 (2023)
     % mainly in 2D dimensions, constitute a playground to study light−matter interactions, many-body effects and their applications in photonics
 \end{textblock*}
 
 \begin{textblock*}{5.0cm}(5.2cm,2.0cm)
-    \,\,\,\,\,\,\, Quantum Light Sources
+    \,\,\,\,\,\,\, {\color<3>{red}Quantum Light Sources}
     \begin{figure}
         \includegraphics[scale=0.25]{Figures/photon_emission.png}
     \end{figure}
-    \,\,\,\,\,\,\, \small S. Fiedler et al. - 2D Mater. \\ 
-    \hspace{1.6cm} 10 021002 (2023)
+    \,\,\,\,\,\,\, \small S. Fiedler et al. - \textit{2D Mater.} \\ 
+    \hspace{1.6cm} \textbf{10} 021002 (2023)
     % tunable photon emission from 2D semiconductors
 \end{textblock*}
 
 \begin{textblock*}{5.0cm}(10.5cm,2.0cm)
-    \,\,\,\,\,\,\, Optical Communication
+    \,\,\,\,\,\,\,\,\,\,\, {\color<4>{red}Valleytronics}
     \begin{figure}
         \includegraphics[scale=0.3]{Figures/communications.png}
     \end{figure}
-    \,\,\,\,\,\,\, \small Yi Zhu et al. - Nano Letters \\
-    \hspace{1.8cm} 2025, 25 (21)
+    \,\,\,\,\,\,\, \small Yi Zhu et al. - \textit{Nano Letters} \\
+    \hspace{1.8cm} \textbf{25} 21 (2025)
     % improve optical communication systems
 \end{textblock*}
+
 
 \end{frame}
 
@@ -89,7 +95,7 @@ Relevant for:
                     \includegraphics[scale=0.4]{Figures/Exciton_Series_b}
                 \end{figure}
                 \vspace{-0.4cm}
-                Alexey Chernikov et al., Phys. Rev. Lett. 113, 076802 (2014)
+                A. Chernikov et al. - \textit{Phys. Rev. Lett.} \textbf{113} 076802 (2014)
             }
 %            \only<5>{
 %                \begin{itemize}
@@ -173,14 +179,14 @@ Relevant for:
 \end{textblock*}
 
 \begin{textblock*}{8.0cm}(.2cm,7.5cm)
-\scriptsize{[1] I.H. Abidi et al., \textit{Adv. Opt. Mater.} 7, 1900397 (2019)} \\
-\scriptsize{[2] L. Banszerus et al., \textit{Nano Lett. } 16, 1387–1391 (2016)} \\
-\scriptsize{[3] J. D. Caldwell et al., \textit{Nat. Rev. Mat.} 4, 5221 (2019)}
+\scriptsize{[1] I.~H. Abidi et al. - \textit{Adv. Opt. Mater.} \textbf{7} 1900397 (2019)} \\
+\scriptsize{[2] L. Banszerus et al. - \textit{Nano Lett.} \textbf{16} 1387--1391 (2016)} \\
+\scriptsize{[3] J.~D. Caldwell et al. - \textit{Nat. Rev. Mat.} \textbf{4} 5221 (2019)}
 \end{textblock*}
 \begin{textblock*}{14.0cm}(7.0cm,7.5cm)
-\scriptsize{[4] D. Rizzo et al., \textit{Nano Lett. } 23, 18, 8426–8435 (2023)} \\
-\scriptsize{[5] J. Henriques et al., \textit{J. Phys.: Cond. Matter} 32, 025304 (2019)} \\
-\scriptsize{[6] C. Elias et al., \textit{Nat. Comm.} 10, 2639 (2019)} %Colla between Laboratory Charles Coulomb Montpellier and Nottingham
+\scriptsize{[4] D. Rizzo et al. - \textit{Nano Lett.} \textbf{23} 8426--8435 (2023)} \\
+\scriptsize{[5] J. Henriques et al. - \textit{J. Phys.: Cond. Matter} \textbf{32} 025304 (2019)} \\
+\scriptsize{[6] C. Elias et al. - \textit{Nat. Comm.} \textbf{10} 2639 (2019)} %Colla between Laboratory Charles Coulomb Montpellier and Nottingham
 \end{textblock*}
 
 }
@@ -191,14 +197,17 @@ Relevant for:
 
         \column{.5\linewidth}
         \only<1->{
-            \textbf{Rytova--Keldysh model}
+            \textbf{Rytova--Keldysh model} \only<4->{\textcolor{ForestGreen}{What can we do with it?}}
             \begin{equation*}
                 \varepsilon_{\mathrm{RK}} (q) = 1 + r_0 q
             \end{equation*}}
-        \only<2->{
+            \only<2->{\begin{equation*}
+                V_{\mathrm{RK}} (r) = \frac{e^2}{4\pi\varepsilon_0}\frac{\pi}{2 r_0} \! \left[ \mathbf{H}_0\!\left(\frac{r}{r_0}\right)-Y_0\!\left(\frac{r}{r_0}\right)\right]
+            \end{equation*}
+        
             \begin{itemize}
                 \item Intuitive
-                \item Analytical expression (also for $V_{\mathrm{RK}}(r)$)
+                \item Analytical expression
             \end{itemize}}
         \onslide<3->{
             \begin{itemize}
@@ -210,7 +219,7 @@ Relevant for:
 
         \column{.5\linewidth}
         \onslide<3->{
-        \textbf{Full numerical \textit{ab initio}}
+        \textbf{Full numerical \textit{ab initio}} \only<5->{\textcolor{ForestGreen}{Can we optimize?}}
             \begin{equation*}
                 \varepsilon_{\vectormath{G} \vectormath{G}'} (\vectormath{q}) = \delta_{\vectormath{G} \vectormath{G}'} - v_c(\vectormath{q} + \vectormath{G}) \chi^0_{\vectormath{G} \vectormath{G}'}(\vectormath{q})
             \end{equation*}}
@@ -223,8 +232,8 @@ Relevant for:
         \onslide<5->{
             \begin{itemize}
                 \item \textcolor{red}{Computationally heavy}
-                \item \textcolor{red}{Technically involved/Less accessible}
-                \item \textcolor{red}{Systems are always 3D}
+                \item \textcolor{red}{Physics harder to grasp}
+                \item \textcolor{red}{Codes are designed for 3D systems}
             \end{itemize}
         }
     \end{columns}

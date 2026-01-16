@@ -30,11 +30,15 @@ SLIDE 5
 
 Excitons are important for:
 
--Enhacing and studying light--matter interactions, constituting a playground for better understanding many-body effects in materials and respective applications
+-Studying light--matter interactions in different regimes of coupling strength and develop new applications
 
--To enginneer quantum light sources, such as single-photon emitters
+-To experimentally build single-photon sources, which can be enhanced by putting the excitonic material inside a microcavity
+to fabricate on-chip coherent light sources
 
--Improve the performance of optical communication systems
+-Induce nonlinear optical phenomena, such as the excitonic shift-current
+
+-Useful in the field of valleytronics by enhancing the degree of valley polarization by stacking layers of excitonic materials, resulting in intensified circular dichroism, which can be used
+for improving error detection in optical communications, or study chiral molecules of biological relevance, like proteins and nucleic acids
 
 SLIDE 6
 
@@ -88,6 +92,11 @@ Disadvantages:
 -As far as we know, there is no direct 2D of implementation for screening,
 2D systems are artificially made 3D to run the code
 
+During my research stay abroad at the Universidad Autónoma de Madrid, I developed a strict 2D
+implementation much more efficient than the typical 3D first-principles implementations, which
+also permits to recover the Rytova-Keldysh limit and calculate the screening parameter.
+Before discussing that, let us see what we can do with the RK model, valid in the low-q limit.
+
 During the PhD studies we have found a middle ground to discuss later in this presentation
 
 
@@ -105,6 +114,7 @@ SLIDE 10
 SLIDE 11
 
 -To determine the excitonic effects in this new material, we adopt a Wannier description of the electron-hole two-body problem
+as we take the low-energy limit in the Hamiltonian, for which the band dispersion is quadratic
 
 -The excitonic states and energies are obtained using the variational method with selected trial wavefunctions for the first four states
 
