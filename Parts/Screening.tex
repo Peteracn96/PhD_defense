@@ -16,15 +16,18 @@
 % \column{.5\linewidth}
 
     \onslide<1->{
-     \begin{equation*}
-        \varepsilon^{\mathrm{RPA}}(\vectormath{r},\vectormath{r}';t,t') = \delta(\vectormath{r}-\vectormath{r}') \delta(t-t') - \int v_c(\vectormath{r}-\vectormath{r}'') \chi^0(\vectormath{r}'',\vectormath{r}';t-t'') \,\dr''
-    \end{equation*}
+        \begin{equation*}
+            \varepsilon^{\mathrm{RPA}}(\vectormath{r},\vectormath{r}';t,t') = \delta(\vectormath{r}-\vectormath{r}') \delta(t-t') - \int v_c(\vectormath{r}-\vectormath{r}'') \chi^0(\vectormath{r}'',\vectormath{r}';t-t'') \,\dr''
+        \end{equation*}
     }
 
     \onslide<2->{
-        
+        \vspace{-0.4cm}
         \begin{equation*}
-            \varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \sqrt{v_c(\bq + \bG)} \chi^0_{\bG \bG'} (\bq) \sqrt{v_c(\bq + \bG')}\,, 
+            \Downarrow \mathcal{F}
+        \end{equation*}
+        \begin{equation*}
+            \varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \sqrt{v_c(\bq + \bG)} \chi^0_{\bG \bG'} (\bq) \sqrt{v_c(\bq + \bG')}
             \begin{cases}
                 v_c(\bq) = \frac{e^2}{2 \varepsilon_0 |\bq|} & \text{in } \mathrm{2D} \\
                 v_c(\bq) = \frac{e^2}{\varepsilon_0 |\bq|^2} & \text{in } \mathrm{3D}
@@ -36,7 +39,7 @@
         \begin{empheq}[innerbox=\fbox]{align}
             \chi^0_{\bG \bG'} (\bq) = \frac{2}{\mathcal{A}} \sum_{vc} \sum_{\bk \sigma} \frac{\bra{c,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{v,\bk  + \bq} \! \bra{v,\bk  + \bq} \ee^{\ii(\bq + \bG') \vdot \br} \ket{c,\bk}}{\epsilon_{v\bk + \bq} - \epsilon_{c\bk} } \notag
         \end{empheq}
-        [1] Jack Deslippe et al., “BerkeleyGW: A massively parallel computer package for the calculation of the quasiparticle and optical properties of materials and nanostructures”, Computer Physics Communications 183.6 (2012)
+        [1] Jack Deslippe et al. - \textit{Comp. Phys. Comm.} \textbf{183} 6 (2012)
     }
 
 \end{frame}
