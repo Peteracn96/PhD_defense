@@ -141,7 +141,6 @@ E_{bind.,\nu} \psi_\nu (\vectormath{r}) = \left(\frac{p_{x}^{2}}{2\mu_{x}}+\frac
 
 \begin{frame}{Optical Conductivity}
 
-
 % \only<1->{
 % \begin{textblock*}{5.0cm}(.2cm,0.8cm)
 % \centering{\small
@@ -156,21 +155,21 @@ E_{bind.,\nu} \psi_\nu (\vectormath{r}) = \left(\frac{p_{x}^{2}}{2\mu_{x}}+\frac
 % }
 
 \only<1->{
-\begin{textblock*}{6.0cm}(10.1cm,1.0cm)
+\begin{textblock*}{6.0cm}(10.3cm,1.0cm)
 \centering{\small
-According to T.~Pedersen [1]
+According to Pedersen [1]
 \begin{equation*}
-    \scalebox{1.0}{$\sigma_{jj} (\omega) = -i \sigma_0 \sum_{\nu=1s,2s}  \frac{E_\nu |\Omega^j_\nu|^2 }{E_\nu - (\hbar \omega + i\Gamma)} $}
+    \scalebox{1.0}{$\sigma_{jj} (\omega) = -i \sigma_0 \sum\limits_{\nu=1s,2s}  \frac{E_\nu |\Omega^j_\nu|^2 }{E_\nu - (\hbar \omega + i\Gamma)} $}
 \end{equation*}}
 \end{textblock*}
 \begin{textblock*}{10.0cm}(.2cm,8.cm)
-\scriptsize{[1] T. Pedersen, \textit{Phys. Rev. B}  92, 235432 (2015)}
+\scriptsize{[1] T.~G.~Pedersen, \textit{Phys. Rev. B}  \textbf{92} 235432 (2015)}
 \end{textblock*}
 }
 
 
 \only<2->{
-\begin{textblock*}{5.0cm}(10.5cm,1.9cm)
+\begin{textblock*}{5.0cm}(10.5cm,2.2cm)
 \centering{
 \begin{equation*}
     \begin{aligned}
@@ -182,25 +181,67 @@ According to T.~Pedersen [1]
 \end{textblock*}
 }
 
-\only<3->{
+\only<3>{
 \begin{textblock*}{10.0cm}(0.1cm,0.8cm)
 \begin{figure}
     \centering
-    \includegraphics[scale=0.4]{Figures/sigma_grid.pdf}
+    \includegraphics[scale=0.4]{Figures/sigma_grid_slides.pdf}
 \end{figure}
 \end{textblock*}
 }
 
-\only<4->{
-
-\begin{textblock*}{8.0cm}(10.cm,4.2cm)
-\begin{itemize}
-    \item Increasing peak intensity
-    \item $\Im\{\sigma\}$  only one zero for $\beta = 2.3$
-    \item $\hat{\mathbf{e}}_j = \mathbf{\hat{y}}$, $\sigma_{yy} (\omega)$ is attenuated
-\end{itemize}
+\only<4>{
+\begin{textblock*}{10.0cm}(0.1cm,0.8cm)
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{Figures/sigma_grid_Re_parts.pdf}
+\end{figure}
 \end{textblock*}
 }
+
+\only<5>{
+\begin{textblock*}{10.0cm}(0.1cm,0.8cm)
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{Figures/sigma_grid_Im_parts.pdf}
+\end{figure}
+\end{textblock*}
+}
+
+\only<6-8>{
+\begin{textblock*}{10.0cm}(0.1cm,0.8cm)
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{Figures/sigma_grid_x_pol.pdf}
+\end{figure}
+\end{textblock*}
+}
+
+\only<9>{
+\begin{textblock*}{10.0cm}(0.1cm,0.8cm)
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{Figures/sigma_grid_y_pol.pdf}
+\end{figure}
+\end{textblock*}
+}
+
+
+\begin{textblock*}{10.0cm}(0.1cm,0.8cm)
+\only<10>{\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{Figures/sigma_grid_slides.pdf}
+\end{figure}}
+\end{textblock*}
+
+\begin{textblock*}{8.0cm}(10.cm,4.7cm)
+    \begin{itemize}
+        \item<7-> Increasing peak intensity for $xx$
+        \item<8-> $\Im\{\sigma\}$ w/ $\beta = 2.3$ only one zero
+        \item<9-> $\hat{\mathbf{e}}_j = \mathbf{\hat{y}}$, $\sigma_{yy} (\omega)$ is attenuated
+    \end{itemize}
+\end{textblock*}
+
 
 \end{frame}
 
@@ -217,33 +258,73 @@ According to T.~Pedersen [1]
 \end{textblock*}
 }
 
-\only<2->{
-\begin{textblock*}{12.0cm}(2.0cm,2.2cm)
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.45]{Figures/absorption_of_omega.pdf}
-\end{figure}
-\end{textblock*}
-}
 
-\only<3->{
-\begin{textblock*}{7.0cm}(8.0cm,6.6cm)
-\begin{itemize}
-    \item Red-shift of the resonances \\
-    \item $2s$ peak higher than $1s$ peak \\
-    \item For $y$ pol. absorption is suppressed
-\end{itemize}
+\begin{textblock*}{12.0cm}(2.0cm,2.2cm)
+    \only<2>{
+    \begin{figure}
+        \centering
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[scale=0.45]{Figures/absorption_of_omega_a.pdf}
+        \end{subfigure}%
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \transparent{0.5}\includegraphics[scale=0.45]{Figures/absorption_of_omega_b.pdf}
+        \end{subfigure}
+    \end{figure}}
+    \only<3>{\begin{figure}
+        \centering
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[scale=0.45]{Figures/absorption_of_omega_a.pdf}
+        \end{subfigure}%
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \transparent{0.5}\includegraphics[scale=0.45]{Figures/absorption_of_omega_b.pdf}
+        \end{subfigure}
+    \end{figure}}
+    \only<4>{
+    \begin{figure}
+        \centering
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \transparent{0.5}\includegraphics[scale=0.45]{Figures/absorption_of_omega_a.pdf}
+        \end{subfigure}%
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[scale=0.45]{Figures/absorption_of_omega_b.pdf}
+        \end{subfigure}
+    \end{figure}}
+    \only<5>{
+        \begin{figure}
+            \centering
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[scale=0.45]{Figures/absorption_of_omega_a.pdf}
+            \end{subfigure}%
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[scale=0.45]{Figures/absorption_of_omega_b.pdf}
+            \end{subfigure}
+        \end{figure}}
+\end{textblock*}
+
+
+\begin{textblock*}{7.0cm}(8.0cm,6.9cm)
+\only<4->{
+    \begin{itemize}   
+        \item For $y$ pol.~absorption is suppressed
+    \end{itemize}}
 \end{textblock*}
 
 \begin{textblock*}{8.0cm}(0.2cm,6.6cm)
-\begin{itemize}
-    \item Tunable absorption 
-    \item Non-monotonic behaviour of the absorption
-    \item Different response for different polarizations
-\end{itemize}
+\only<3->{
+    \begin{itemize}
+        \item Tunable absorption 
+        \item Non-monotonic behaviour of the absorption
+        \item $2s$ peak higher than $1s$ peak
+    \end{itemize}}
 \end{textblock*}
-
-}
 
 \end{frame}
 
@@ -263,16 +344,16 @@ According to T.~Pedersen [1]
 \begin{textblock*}{6.0cm}(0.8cm,2.3cm)
 \begin{figure}
     \centering
-    \includegraphics[scale=0.28]{Figures/absorption_of_beta_panel_a.png}
+    \includegraphics[scale=0.5]{Figures/absorption_of_beta_a.pdf}
 \end{figure}
 \end{textblock*}
 }
 
 \only<3->{
 \begin{textblock*}{6.0cm}(7.2cm,2.3cm)
-\begin{figure}
+\begin{figure} % change to subfigure environment
     \centering
-    \includegraphics[scale=0.28]{Figures/absorption_of_beta_panel_b.png}
+    \includegraphics[scale=0.5]{Figures/Absorption_vs_Resigma.pdf}
 \end{figure}
 \end{textblock*}
 }
@@ -485,14 +566,14 @@ According to T.~Pedersen [1]
         \only<1->{
         \begin{figure}
             \centering
-            \includegraphics[scale=0.25]{Figures/absorption_of_omega_a.png}
+            \includegraphics[scale=0.25]{Figures/absorption_of_omega_a.pdf}
         \end{figure}}
     \end{textblock*}
     \begin{textblock*}{8cm}(8.0cm,4.4cm)
         \only<2->{
         \begin{figure}
             \centering
-            \includegraphics[scale=0.22]{Figures/absorption_of_beta_panel_a.png}
+            \includegraphics[scale=0.22]{Figures/absorption_of_beta_a.pdf}
         \end{figure}}
     \end{textblock*}
 
