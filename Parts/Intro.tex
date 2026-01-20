@@ -64,12 +64,10 @@ Relevant for:
             \onslide<1->{
                 \textbf{For a typical 3D material (e.g., GaAs)}
                 \begin{equation*}
-                    E_{b,n} = - \frac{R^*}{n^2}
-                \end{equation*}
-
-                \begin{equation*}
-                    \label{eq:Rydberg_modified}
-                    R^* = \frac{2 \mu_{eh}^2 e^4}{\hbar^2 (8 \pi \varepsilon \varepsilon_0)^2}
+                    \begin{aligned}
+                        E_{b,n} &= - \frac{R^*}{n^2} \\
+                        R^*     &= \frac{2 \mu_{eh}^2 e^4}{\hbar^2 (8 \pi \varepsilon \varepsilon_0)^2}
+                    \end{aligned}                   
                 \end{equation*}
             }
             \column{.5\linewidth}
@@ -88,15 +86,17 @@ Relevant for:
         \begin{columns}[T]
 
             \column{.6\linewidth}
-            \only<4->{
-                \vspace{-0.4cm}
-                \begin{figure}
-                    \centering
-                    \includegraphics[scale=0.4]{Figures/Exciton_Series_b}
-                \end{figure}
-                \vspace{-0.4cm}
-                A. Chernikov et al. - \textit{Phys. Rev. Lett.} \textbf{113} 076802 (2014)
-            }
+            \begin{textblock*}{10.0cm}(0.cm,5.0cm)            
+                \only<4->{
+                    \vspace{-0.5cm}
+                    \hspace{-0.5cm}
+                    \begin{figure}
+                        \includegraphics[scale=0.4]{Figures/Exciton_Series_b}
+                    \end{figure}
+                    \vspace{-0.4cm}
+                    A. Chernikov et al. - \textit{Phys. Rev. Lett.} \textbf{113} 076802 (2014)
+                }
+            \end{textblock*}
 %            \only<5>{
 %                \begin{itemize}
 %                    \item "Theoretical Methods for Excitonic Physics in 2D Materials", Maurício et al. Phys. Status Solidi B, 259: 2200097, 2022 \small (tutorial for exciton calculation methods)
@@ -192,49 +192,54 @@ Relevant for:
 }
 \end{frame}
 
-\begin{frame}{Motivation}
+\begin{frame}{Motivation}    
     \begin{columns}[T]
 
         \column{.5\linewidth}
-        \only<1->{
-            \textbf{Rytova--Keldysh model} \only<4->{\textcolor{ForestGreen}{What can we do with it?}}
-            \begin{equation*}
-                \varepsilon_{\mathrm{RK}} (q) = 1 + r_0 q
-            \end{equation*}}
-            \only<2->{\begin{equation*}
-                V_{\mathrm{RK}} (r) = \frac{e^2}{4\pi\varepsilon_0}\frac{\pi}{2 r_0} \! \left[ \mathbf{H}_0\!\left(\frac{r}{r_0}\right)-Y_0\!\left(\frac{r}{r_0}\right)\right]
-            \end{equation*}
         
-            \begin{itemize}
-                \item Intuitive
-                \item Analytical expression
-            \end{itemize}}
-        \onslide<3->{
-            \begin{itemize}
-                \item \textcolor{red}{Excitons are determined numerically}
-                \item \textcolor{red}{Questionable for layered systems}
-                \item \textcolor{red}{Screening parameter $r_0$ obtained from \textit{ab initio} methods either way}
-            \end{itemize}
-        }
-
+            \begin{textblock*}{\linewidth}(0.3cm,1.1cm)
+            
+            \onslide<1->{
+                \textbf{Rytova--Keldysh model} \only<7->{\textcolor{ForestGreen}{What can we do with it?}}
+                \begin{equation*}
+                    \varepsilon_{\mathrm{RK}} (q) = 1 + r_0 q \,\,, V_{\mathrm{RK}} (q) = \frac{e^2}{2 \varepsilon_0 q\varepsilon_{\mathrm{RK}} (q)}
+                \end{equation*}}
+                \only<2->{\begin{equation*}
+                    V_{\mathrm{RK}} (r) = \frac{e^2}{4\pi\varepsilon_0}\frac{\pi}{2 r_0} \! \left[ \mathbf{H}_0\!\left(\frac{r}{r_0}\right)-Y_0\!\left(\frac{r}{r_0}\right)\right]
+                \end{equation*}
+            
+                \begin{itemize}
+                    \item Intuitive
+                    \item Analytical expression
+                \end{itemize}}
+            \onslide<3->{
+                \begin{itemize}
+                    \item \textcolor{red}{Excitons are determined numerically}
+                    \item \textcolor{red}{Questionable for layered systems}
+                    \item \textcolor{red}{Screening parameter $r_0$ obtained from \textit{ab initio} methods either way}
+                \end{itemize}
+            }
+            \end{textblock*}
         \column{.5\linewidth}
-        \onslide<3->{
-        \textbf{Full numerical \textit{ab initio}} \only<5->{\textcolor{ForestGreen}{Can we optimize?}}
-            \begin{equation*}
-                \varepsilon_{\vectormath{G} \vectormath{G}'} (\vectormath{q}) = \delta_{\vectormath{G} \vectormath{G}'} - v_c(\vectormath{q} + \vectormath{G}) \chi^0_{\vectormath{G} \vectormath{G}'}(\vectormath{q})
-            \end{equation*}}
-        \onslide<4->{
-            \begin{itemize}
-                \item Works for any kind of system
-                \item Several packages available (BerkeleyGW, Yambo, VESPA, etc...)
-                \item Captures screening in its $q$ entirety
-            \end{itemize}}
-        \onslide<5->{
-            \begin{itemize}
-                \item \textcolor{red}{Computationally heavy}
-                \item \textcolor{red}{Physics harder to grasp}
-                \item \textcolor{red}{Codes are designed for 3D systems}
-            \end{itemize}
-        }
+            \begin{textblock*}{\linewidth}(\linewidth+0.6cm,1.1cm)
+                \onslide<4->{
+                \textbf{Full numerical \textit{ab initio}} \only<8->{\textcolor{ForestGreen}{Can we optimize?}}
+                    \begin{equation*}
+                        \varepsilon_{\vectormath{G} \vectormath{G}'} (\vectormath{q}) = \delta_{\vectormath{G} \vectormath{G}'} - v_c(\vectormath{q} + \vectormath{G}) \chi^0_{\vectormath{G} \vectormath{G}'}(\vectormath{q})
+                    \end{equation*}}
+                \onslide<5->{
+                    \begin{itemize}
+                        \item Works for any kind of system
+                        \item Several packages available (BerkeleyGW, Yambo, VESPA, etc...)
+                        \item Captures screening in its $q$ entirety
+                    \end{itemize}}
+                \onslide<6->{
+                    \begin{itemize}
+                        \item \textcolor{red}{Computationally heavy}
+                        \item \textcolor{red}{Physics harder to grasp}
+                        \item \textcolor{red}{Codes are designed for 3D systems}
+                    \end{itemize}
+                }
+            \end{textblock*}
     \end{columns}
 \end{frame}

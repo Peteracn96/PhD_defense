@@ -25,7 +25,7 @@
             \small
             \underline{P.~Ninhos} et. al - \textit{ACS Nano}  \textbf{18} 31 (2024)}
             \vspace{0.3cm}
-            \only<4->{For $\beta ~1$, and $V_0~$...\textcolor{red}{Ver na reply letter}}
+            \only<4->{For $\beta \sim 1$, and $V_0~$}
             \end{textblock*}
         
 
@@ -114,7 +114,7 @@ E_{bind.,\nu} \psi_\nu (\vectormath{r}) = \left(\frac{p_{x}^{2}}{2\mu_{x}}+\frac
    \Psi_{1s}&=C_{1s}\ee^{-\rho_{1s}} \\
    \Psi_{2x}&=C_{2x}x\ee^{-\rho_{2x}} \\
    \Psi_{2y}&=C_{2y}y\ee^{-\rho_{2y}} \\
-   \Psi_{2s}&=C_{2s}\left(1-d\rho_{2s}\right)\ee^{-\rho_{2s}} \\
+   \Psi_{2s}&=C_{2s}\!\left(1-d\rho_{2s}\right)\ee^{-\rho_{2s}} \\
    \rho_{\nu}=&\sqrt{a_{\nu}x^{2}+b_{\nu}y^{2}}\\
    \nu&=1s,2x,2y,2s
 \end{split}
@@ -163,7 +163,7 @@ According to Pedersen [1]
 \end{equation*}}
 \end{textblock*}
 \begin{textblock*}{10.0cm}(.2cm,8.cm)
-\scriptsize{[1] T.~G.~Pedersen, \textit{Phys. Rev. B}  \textbf{92} 235432 (2015)}
+\scriptsize{[1] T.~G.~Pedersen - \textit{Phys. Rev. B}  \textbf{92} 235432 (2015)}
 \end{textblock*}
 }
 
@@ -332,7 +332,7 @@ According to Pedersen [1]
 \begin{frame}{Absorption peaks}
 
     \only<1->{
-\begin{textblock*}{6.0cm}(.2cm,0.9cm)
+\begin{textblock*}{12.0cm}(.2cm,0.9cm)
 \small{
     \begin{empheq}[innerbox=\fbox,right={\,, \omega = E_\nu/\hbar\,, \nu=1s,2s}]{align}
         \max_{\omega}{\mathcal{A}_{\mathrm{opt}}} = \frac{4 \sqrt{\varepsilon_1} \sigma'}{(\sqrt{\varepsilon_2} + \sqrt{\varepsilon_1} + \sigma')^2}\ \notag
@@ -340,33 +340,52 @@ According to Pedersen [1]
 \end{textblock*}
 }
 
-\only<2->{
-\begin{textblock*}{6.0cm}(0.8cm,2.3cm)
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.5]{Figures/absorption_of_beta_a.pdf}
-\end{figure}
-\end{textblock*}
-}
+\only<2-3>{
+    \begin{figure}
+        \centering
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[scale=0.5]{Figures/absorption_of_beta_a.pdf}
+        \end{subfigure}%
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \transparent{0.5}\includegraphics[scale=0.5]{Figures/Absorption_vs_Resigma.pdf}
+        \end{subfigure}
+    \end{figure}}
 
-\only<3->{
-\begin{textblock*}{6.0cm}(7.2cm,2.3cm)
-\begin{figure} % change to subfigure environment
-    \centering
-    \includegraphics[scale=0.5]{Figures/Absorption_vs_Resigma.pdf}
-\end{figure}
-\end{textblock*}
-}
+\only<4>{
+    \begin{figure}
+        \centering
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \transparent{0.5}\includegraphics[scale=0.5]{Figures/absorption_of_beta_a.pdf}
+        \end{subfigure}%
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[scale=0.5]{Figures/Absorption_vs_Resigma.pdf}
+        \end{subfigure}
+        \end{figure}}
 
-\only<4->{
+\only<5>{
+    \begin{figure}
+        \centering
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[scale=0.5]{Figures/absorption_of_beta_a.pdf}
+        \end{subfigure}%
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[scale=0.5]{Figures/Absorption_vs_Resigma.pdf}
+        \end{subfigure}
+        \end{figure}}
+
 \begin{textblock*}{14.0cm}(0.8cm,6.7cm)
 \begin{itemize}
-    \item Tunable absorption 
-    \item Non-monotonic behaviour of the absorption peak
-    \item Different response for different polarizations $\Rightarrow$ grid polarizer
+    \item<3-> Tunable absorption 
+    \item<3-> Different response for different polarizations $\Rightarrow$ grid polarizer
+    \item<4-> Non-monotonic behaviour of the absorption peak    
 \end{itemize}
 \end{textblock*}
-}
 
     
 \end{frame}
@@ -377,7 +396,7 @@ According to Pedersen [1]
 \subsection{Exciton--Polaritons}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Exciton--polaritons}
+\begin{frame}{Exciton--Polaritons}
 \setbeamercovered{transparent=15}
 \only<1->{
 
@@ -481,36 +500,22 @@ According to Pedersen [1]
 }
 
 \begin{textblock*}{12cm}(1.6cm,4.5cm)
-\setbeamercovered{transparent=15}
+    \only<3,6>{\vspace{0.18cm}
+        \begin{center}
+            \includegraphics[scale=0.45]{Figures/polariton_dispersion_relation.jpg}
+        \end{center}}
 
-\begin{columns}[b]
-\begin{column}{0.33\textwidth}
- \only<2,3,6>{
-   \begin{figure}
-    \centering
-        \includegraphics[width=0.9\linewidth]{Figures/polariton_a.png}
-   \end{figure}
-  }      
- \end{column}
-\begin{column}{0.33\textwidth}
- \only<2,4,6>{
-    \hspace{0.5cm}
-  \begin{figure}
-    \centering
-        \includegraphics[width=0.9\linewidth]{Figures/polariton_b.png}
-   \end{figure}
-   }
- \end{column}
- \begin{column}{0.33\textwidth}
- \only<2,5,6>{
-  \begin{figure}
-    \centering
-        \includegraphics[width=0.9\linewidth]{Figures/polariton_c.png}
-   \end{figure}
-   }
- \end{column}
-\end{columns}
+    \only<4>{
+        \begin{center}
+            \includegraphics[scale=0.45]{Figures/polariton_dispersion_relation_a_&_b.jpg}
+        \end{center}}
+
+    \only<5>{
+        \begin{center}
+            \includegraphics[scale=0.45]{Figures/polariton_dispersion_relation_c.jpg}
+        \end{center}}
 \end{textblock*}
+
 % \only<3>{
 % \begin{textblock*}{5.0cm}(0.7cm,4.4cm)
 % \begin{center}
@@ -550,41 +555,56 @@ According to Pedersen [1]
 
 \begin{frame}{Summary}
 
-    \begin{textblock*}{8cm}(0.5cm,1.2cm)
+    \begin{textblock*}{10cm}(0.5cm,1.2cm)
         \begin{itemize}
             \item<1-> Tune the frequency of the optical resonances
         \end{itemize}
     \end{textblock*}
 
-    \begin{textblock*}{8cm}(0.5cm,4.5cm)
+    \begin{textblock*}{10cm}(0.5cm,4.6cm)
         \begin{itemize}
             \item<2-> Tunable absorption by changing the polarization
         \end{itemize}
     \end{textblock*}
 
-    \begin{textblock*}{8cm}(8.0cm,1.0cm)
+    \begin{textblock*}{8cm}(.5cm,1.4cm)
         \only<1->{
         \begin{figure}
             \centering
-            \includegraphics[scale=0.25]{Figures/absorption_of_omega_a.pdf}
+            \includegraphics[scale=0.3]{Figures/absorption_of_omega_a.pdf}
         \end{figure}}
     \end{textblock*}
-    \begin{textblock*}{8cm}(8.0cm,4.4cm)
+    \begin{textblock*}{8cm}(.5cm,5.5cm)
         \only<2->{
         \begin{figure}
             \centering
-            \includegraphics[scale=0.22]{Figures/absorption_of_beta_a.pdf}
+            \includegraphics[scale=0.3]{Figures/absorption_of_beta_a.pdf}
         \end{figure}}
     \end{textblock*}
 
-    \begin{textblock*}{8cm}(0.5cm,5.3cm)
+    \begin{textblock*}{6.2cm}(9.5cm,1.cm)        
         \only<3->{
-        \begin{block}{}    
+        \begin{exampleblock}{}
+            \small    
+            Of experimental relevance
+            \setbeamertemplate{items}[triangle]
+            \begin{itemize}\setlength{\itemsep}{6pt}
+                \item<4-> To have $\beta \sim 1$, $L\sim40$~nm, $V_0\sim40$~meV
+                \item<5-> D.~R.~Danielsen et al. - \textit{ACS Nano} \textbf{19} 22 (2025)
+                \item<6-> G.~Ermolaev et al. - \textit{Arxiv} \textbf{2509} 18866 (2024)
+            \end{itemize}
+        \end{exampleblock}}
+    \end{textblock*}
+
+    \begin{textblock*}{6.2cm}(9.5cm,5.3cm)
+        \only<7->{
+        \begin{block}{}
+            \small    
             However....
             \begin{itemize}\setlength{\itemsep}{6pt}
-                \item<4-> Where does $\varepsilon_{\mathrm{RK}}(q)$ come from?
-                \item<5-> How to determine $r_0$?
-                \item<6-> How does $\varepsilon_{\mathrm{2D}}(q)$ look like for higher $q$?
+                \item<8-> Where does $\varepsilon_{\mathrm{RK}}(q)$ come from?
+                \item<9-> How to determine $r_0$?
+                \item<10-> $\varepsilon_{\mathrm{2D}}(q)$ for higher $q$?
             \end{itemize}
         \end{block}}        
     \end{textblock*}
