@@ -196,7 +196,7 @@
 \begin{frame}{Macroscopic dielectric function: results}
 
     \begin{columns}
-        \column{.5\linewidth}
+        \column{.45\linewidth}
         \onslide<1->{Does $\varepsilon^{-1}_{\bG \bG'} (\bq)$ converge?} \onslide<3->{\textcolor{red}{Clearly no!}}
 
         \onslide<2->{
@@ -206,9 +206,10 @@
             \end{minipage}%
             \begin{minipage}{0.5\textwidth}		
             \end{minipage}
-        \end{figure}}        
-
-        \column{.5\linewidth}
+        \end{figure}}
+        
+        \onslide<6->{ S.~Latini, T.~Olsen, K.~S. Thygesen - \\ \textit{Phys. Rev. B} \textbf{92} 245123 (2015)}
+        \column{.55\linewidth}
 
         \onslide<4->{
             But still,
@@ -216,13 +217,14 @@
                 \item<5-> How close can we get to the \textit{ab initio} result?
                 \item<7-> Does the exciton binding energy converge?
             \end{itemize}
+            \
         }
-        \onslide<6->{
+        \onslide<6->{            
         \begin{figure}[H]
                 \centering
                 \includegraphics[width=\linewidth]{Figures/epsilon2D_abinitio_vs_q_hBN}                
-            \end{figure}
-            S.~Latini, T.~Olsen, K.~S. Thygesen - \textit{Phys. Rev. B} \textbf{92} 245123 (2015)}
+            \end{figure}}                
+        
     \end{columns}    
 \end{frame}
 
@@ -339,12 +341,12 @@
             \cline{3-8}
             &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$}                                            \\ \cline{3-8}
             &                                                & 0                          & 3                & 5.1              & 6              & 8                      & 9                       \\ \cline{8-8} \hline \hline
-            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 4.14935                & 5.5566                      & 5.75416                  & 6.011076               & $E_b >$ gap        \\
-            \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & 2.503138               & 4.380231                    & 3.803146                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
-            \multicolumn{1}{|c|}{}                           & 5.1 & X                    & \multicolumn{1}{c|}{X} & 2.797365                    & 2.99418                  & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
-            \multicolumn{1}{|c|}{}                           & 6 & X                      & X                      & \multicolumn{1}{c|}{X}      & 2.83405                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
-            \multicolumn{1}{|c|}{}                           & 8 & X                      & X                      & X                           & \multicolumn{1}{c|}{X}   & 2.900768               & 5.811998          \\ \cline{7-7}
-            \multicolumn{1}{|c|}{}                           & 9 & X                      & X                      & X                           & X                        & \multicolumn{1}{c|}{X} & 3.018396 \\  \cline{1-2} \cline{1-2} \cline{8-8}
+            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{\phantom{X}} & 4.14935                & 5.5566                      & 5.75416                  & 6.011076               & $E_b >$ gap        \\
+            \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{\phantom{X}} & 2.503138               & 4.380231                    & 3.803146                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
+            \multicolumn{1}{|c|}{}                           & 5.1 & \phantom{X}                    & \multicolumn{1}{c|}{\phantom{X}} & 2.797365                    & 2.99418                  & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
+            \multicolumn{1}{|c|}{}                           & 6 & \phantom{X}                      & \phantom{X}                      & \multicolumn{1}{c|}{\phantom{X}}      & 2.83405                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
+            \multicolumn{1}{|c|}{}                           & 8 & \phantom{X}                      & \phantom{X}                      & \phantom{X}                           & \multicolumn{1}{c|}{\phantom{X}}   & 2.900768               & 5.811998          \\ \cline{7-7}
+            \multicolumn{1}{|c|}{}                           & 9 & \phantom{X}                      & \phantom{X}                      & \phantom{X}                           & \phantom{X}                        & \multicolumn{1}{c|}{\phantom{X}} & 3.018396 \\  \cline{1-2} \cline{1-2} \cline{8-8}
         \end{tabular}
     \end{table}}
 
@@ -356,12 +358,12 @@
             \cline{3-8}
             &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$}                                            \\ \cline{3-8}
             &                                                & 0                          & 3                & 5.1              & 6              & 8                      & 9                       \\ \cline{8-8} \hline \hline
-            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & \textcolor{red}{0} & \multicolumn{1}{c|}{X} & \textcolor{red}{4.14935}                & \textcolor{red}{5.5566}                      & \textcolor{red}{5.75416}                  & \textcolor{red}{6.011076}               & $E_b >$ gap        \\
-            \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & 2.503138               & 4.380231                    & 3.803146                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
-            \multicolumn{1}{|c|}{}                           & 5.1 & X                    & \multicolumn{1}{c|}{X} & 2.797365                    & 2.99418                  & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
-            \multicolumn{1}{|c|}{}                           & 6 & X                      & X                      & \multicolumn{1}{c|}{X}      & 2.83405                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
-            \multicolumn{1}{|c|}{}                           & 8 & X                      & X                      & X                           & \multicolumn{1}{c|}{X}   & 2.900768               & 5.811998          \\ \cline{7-7}
-            \multicolumn{1}{|c|}{}                           & 9 & X                      & X                      & X                           & X                        & \multicolumn{1}{c|}{X} & 3.018396 \\  \cline{1-2} \cline{1-2} \cline{8-8}
+            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & \textcolor{red}{0} & \multicolumn{1}{c|}{\phantom{X}} & \textcolor{red}{4.14935}                & \textcolor{red}{5.5566}                      & \textcolor{red}{5.75416}                  & \textcolor{red}{6.011076}               & $E_b >$ gap        \\
+            \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{\phantom{X}} & 2.503138               & 4.380231                    & 3.803146                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
+            \multicolumn{1}{|c|}{}                           & 5.1 & \phantom{X}                    & \multicolumn{1}{c|}{\phantom{X}} & 2.797365                    & 2.99418                  & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
+            \multicolumn{1}{|c|}{}                           & 6 & \phantom{X}                      & \phantom{X}                      & \multicolumn{1}{c|}{\phantom{X}}      & 2.83405                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
+            \multicolumn{1}{|c|}{}                           & 8 & \phantom{X}                      & \phantom{X}                      & \phantom{X}                           & \multicolumn{1}{c|}{\phantom{X}}   & 2.900768               & 5.811998          \\ \cline{7-7}
+            \multicolumn{1}{|c|}{}                           & 9 & \phantom{X}                      & \phantom{X}                      & \phantom{X}                           & \phantom{X}                        & \multicolumn{1}{c|}{\phantom{X}} & 3.018396 \\  \cline{1-2} \cline{1-2} \cline{8-8}
         \end{tabular}
     \end{table}}
 
@@ -373,12 +375,12 @@
             \cline{3-8}
             &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$}          \\ \cline{3-8}
             &                                                & 0                          & 3                      & 5.1              & \textcolor{green!50!black}{6}              & 8                      & 9                       \\ \cline{8-8} \hline \hline
-            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 4.14935                & 5.5566                     & \textcolor{green!50!black}{5.75416}                  & 6.011076               & $E_b >$ gap        \\
-            \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & 2.503138               & 4.380231                    & \textcolor{green!50!black}{3.803146}                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
-            \multicolumn{1}{|c|}{}                           & 5.1 & X                    & \multicolumn{1}{c|}{X} & 2.797365                    & \textcolor{green!50!black}{2.99418}                 & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
-            \multicolumn{1}{|c|}{}                           & 6 & X                      & X                      & \multicolumn{1}{c|}{X}      & \textcolor{green!50!black}{2.83405}                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
-            \multicolumn{1}{|c|}{}                           & 8 & X                      & X                      & X                           & \multicolumn{1}{c|}{X}   & 2.900768               & 5.811998          \\ \cline{7-7}
-            \multicolumn{1}{|c|}{}                           & 9 & X                      & X                      & X                           & X                        & \multicolumn{1}{c|}{X} & 3.018396 \\  \cline{1-2} \cline{1-2} \cline{8-8}
+            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{\phantom{X}} & 4.14935                & 5.5566                     & \textcolor{green!50!black}{5.75416}                  & 6.011076               & $E_b >$ gap        \\
+            \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{\phantom{X}} & 2.503138               & 4.380231                    & \textcolor{green!50!black}{3.803146}                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
+            \multicolumn{1}{|c|}{}                           & 5.1 & \phantom{X}                    & \multicolumn{1}{c|}{\phantom{X}} & 2.797365                    & \textcolor{green!50!black}{2.99418}                 & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
+            \multicolumn{1}{|c|}{}                           & 6 & \phantom{X}                      & \phantom{X}                      & \multicolumn{1}{c|}{\phantom{X}}      & \textcolor{green!50!black}{2.83405}                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
+            \multicolumn{1}{|c|}{}                           & 8 & \phantom{X}                      & \phantom{X}                      & \phantom{X}                           & \multicolumn{1}{c|}{\phantom{X}}   & 2.900768               & 5.811998          \\ \cline{7-7}
+            \multicolumn{1}{|c|}{}                           & 9 & \phantom{X}                      & \phantom{X}                      & \phantom{X}                           & \phantom{X}                        & \multicolumn{1}{c|}{\phantom{X}} & 3.018396 \\  \cline{1-2} \cline{1-2} \cline{8-8}
         \end{tabular}
     \end{table}}
 
@@ -390,37 +392,41 @@
             \cline{3-8}
             &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$}                                            \\ \cline{3-8}
             &                                                & 0                          & 3                & 5.1              & 6              & 8                      & 9                       \\ \cline{8-8} \hline \hline
-            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 4.14935                & 5.5566                     & 5.75416                  & 6.011076               & $E_b >$ gap        \\
-            \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & \textcolor{blue!50!black}{2.503138}                  & 4.380231                    & 3.803146                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
-            \multicolumn{1}{|c|}{}                           & 5.1 & X                    & \multicolumn{1}{c|}{X} & 2.797365                    & \textcolor{blue!50!black}{2.99418}                 & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
-            \multicolumn{1}{|c|}{}                           & 6 & X                      & X                      & \multicolumn{1}{c|}{X}      & 2.83405                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
-            \multicolumn{1}{|c|}{}                           & 8 & X                      & X                      & X                           & \multicolumn{1}{c|}{X}   & \textcolor{blue!50!black}{2.900768}               & 5.811998          \\ \cline{7-7}
-            \multicolumn{1}{|c|}{}                           & 9 & X                      & X                      & X                           & X                        & \multicolumn{1}{c|}{X} & \textcolor{blue!50!black}{3.018396} \\  \cline{1-2} \cline{1-2} \cline{8-8}
+            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{\phantom{X}} & 4.14935                & 5.5566                     & 5.75416                  & 6.011076               & $E_b >$ gap        \\
+            \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{\phantom{X}} & \textcolor{blue!50!white}{2.503138}                  & 4.380231                    & 3.803146                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
+            \multicolumn{1}{|c|}{}                           & 5.1 & \phantom{X}                    & \multicolumn{1}{c|}{\phantom{X}} & \textcolor{blue!50!white}{2.797365}                    & 2.99418                 & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
+            \multicolumn{1}{|c|}{}                           & 6 & \phantom{X}                      & \phantom{X}                      & \multicolumn{1}{c|}{\phantom{X}}      & \textcolor{blue!50!white}{2.83405}                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
+            \multicolumn{1}{|c|}{}                           & 8 & \phantom{X}                      & \phantom{X}                      & \phantom{X}                           & \multicolumn{1}{c|}{\phantom{X}}   & \textcolor{blue!50!white}{2.900768}               & 5.811998          \\ \cline{7-7}
+            \multicolumn{1}{|c|}{}                           & 9 & \phantom{X}                      & \phantom{X}                      & \phantom{X}                           & \phantom{X}                        & \multicolumn{1}{c|}{\phantom{X}} & \textcolor{blue!50!white}{3.018396} \\  \cline{1-2} \cline{1-2} \cline{8-8}
         \end{tabular}
     \end{table}}
 
     
 
     $E_b >$ gap -> the exciton comes with negative excitation energy
-    
+    \only<2>{
     \begin{itemize}
-        \onslide<2->{\item \textcolor{red}{For $G^X_c = 0$, $E_b$ increases with increasing $G^{\varepsilon}_c$ (decreased screening)}}
-    \end{itemize}
+        \item \textcolor{red}{For $G^X_c = 0$, $E_b$ increases with increasing $G^{\varepsilon}_c$ (decreased screening)}
+        \item \phantom{For a given $G^{\varepsilon}_c$, $E_b$ converges w/ increasing $G^X_c$ (somewhat)}
+        \item \phantom{something}
+    \end{itemize}}
 
-    
+    \only<3>{
     \begin{itemize}
-        \onslide<3->{\item For $G^X_c = 0$, $E_b$ increases with increasing $G^{\varepsilon}_c$ (decreased screening)
-        \item \textcolor{green!50!black}{For a given $G^{\varepsilon}_c$, $E_b$ converges w/ increasing $G^X_c$ (somewhat)}}        
-    \end{itemize}
+        \item For $G^X_c = 0$, $E_b$ increases with increasing $G^{\varepsilon}_c$ (decreased screening)
+        \item \textcolor{green!50!black}{For a given $G^{\varepsilon}_c$, $E_b$ converges w/ increasing $G^X_c$ (somewhat)} 
+        \item \phantom{Something}
+    \end{itemize}}
     
-    \onslide<4->{
+    \only<4>{
     \begin{itemize}
         \item For $G^X_c = 0$, $E_b$ increases with increasing $G^{\varepsilon}_c$ (decreased screening)
         \item For a given $G^{\varepsilon}_c$, $E_b$ converges w/ increasing $G^X_c$ (somewhat)
-         \item \textcolor{blue!50!black}{Quite remarkably, $E_b$ converges!}}
-    \end{itemize}
+        \item \textcolor{blue!50!white}{Quite remarkably, $E_b$ converges!}
+    \end{itemize}}
 \end{frame}
 
+\iffalse
 \begin{frame}{Monolayer \ch{MoS2} band structure}
 
     \begin{figure}[H]
@@ -454,6 +460,7 @@
 
     At least apparent numerical convergence
 \end{frame}
+\fi
 
 \subsection{Quasi-2D Approach for Screening}
 
