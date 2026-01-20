@@ -24,22 +24,22 @@
     \onslide<2->{
         \vspace{-0.4cm}
         \begin{equation*}
-            \Downarrow \mathcal{F}
-        \end{equation*}
-        \begin{equation*}
+            \Downarrow \mathcal{F} \text{ and } \omega \to 0
+        \end{equation*}}
+        \onslide<3->{\begin{equation*}
             \varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \sqrt{v_c(\bq + \bG)} \chi^0_{\bG \bG'} (\bq) \sqrt{v_c(\bq + \bG')}
             \begin{cases}
                 v_c(\bq) = \frac{e^2}{2 \varepsilon_0 |\bq|} & \text{in } \mathrm{2D} \\
                 v_c(\bq) = \frac{e^2}{\varepsilon_0 |\bq|^2} & \text{in } \mathrm{3D}
             \end{cases}
         \end{equation*}}
-    \onslide<2->{
+    \onslide<4->{
         For an insulator/semiconductor
 
         \begin{empheq}[innerbox=\fbox]{align}
             \chi^0_{\bG \bG'} (\bq) = \frac{2}{\mathcal{A}} \sum_{vc} \sum_{\bk \sigma} \frac{\bra{c,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{v,\bk  + \bq} \! \bra{v,\bk  + \bq} \ee^{\ii(\bq + \bG') \vdot \br} \ket{c,\bk}}{\epsilon_{v\bk + \bq} - \epsilon_{c\bk} } \notag
         \end{empheq}
-        [1] Jack Deslippe et al. - \textit{Comp. Phys. Comm.} \textbf{183} 6 (2012)
+        [1] Jack Deslippe et al. - \textit{Comp. Phys. Comm.} \textbf{183} 6 (2012) $\leftarrow$ BerkeleyGW
     }
 
 \end{frame}
@@ -47,26 +47,35 @@
 
 \begin{frame}{Macroscopic dielectric function}
 
-    \onslide<1->{
+    % \onslide<1->{
+    %     Screened Coulomb potential in a crystal:
+    %     $W(\br,\br') = \int \dr'' \varepsilon^{-1}(\br,\br'') v_c(\br''-\br') \xrightarrow{\mathcal{F}} W_{\bG \bG'}(\bq) = \sqrt{v_c(\bq+\bG)} \varepsilon^{-1}_{\bG \bG'} (\bq) \sqrt{v_c(\bq+\bG')}$}
+
+    % \onslide<2->{
+    %     Defining the macroscopic screened potential as:
+    %     $W(\bq) \equiv W_{\bzero \bzero}(\bq) = \varepsilon^{-1}_{\bzero \bzero}(\bq) v_c(\bq) = \pause \frac{v_c(\bq)}{\varepsilon_{\mathrm{M}}(\bq)}$}
+    % \onslide<3->{
+    %     where we defined the macroscopic dielectric function as
+    %     $\varepsilon_{\mathrm{M}}(\bq) \equiv \frac{1}{\varepsilon^{-1}_{\bzero \bzero}(\bq)}$
+
+    %     \small Note: $\varepsilon^{-1}_{\bzero \bzero}(\bq) \text{ is the } \bzero \bzero$ element of the inverse $\neq$ inverse of the $\bzero \bzero$ element}
+
+
+    \begin{itemize}\setlength{\itemsep}{10pt}
+        \item<1-> Screened Coulomb potential in a crystal:
+        $W(\br,\br') = \int \dr'' \varepsilon^{-1}(\br,\br'') v_c(\br''-\br') \xrightarrow{\mathcal{F}} W_{\bG \bG'}(\bq) = \sqrt{v_c(\bq+\bG)} \varepsilon^{-1}_{\bG \bG'} (\bq) \sqrt{v_c(\bq+\bG')}$
+        \item<2-> Defining the macroscopic screened potential as: \\
+        $W(\bq) \equiv W_{\bzero \bzero}(\bq) = \varepsilon^{-1}_{\bzero \bzero}(\bq) v_c(\bq) = \pause \frac{v_c(\bq)}{\varepsilon_{\mathrm{M}}(\bq)}$
+        \item<3-> where the macroscopic dielectric function is $\varepsilon_{\mathrm{M}}(\bq) \equiv \frac{1}{\varepsilon^{-1}_{\bzero \bzero}(\bq)}$ \\
+        \small Note: $\varepsilon^{-1}_{\bzero \bzero}(\bq) \text{ is the } \bzero \bzero$ element of the inverse $\neq$ inverse of the $\bzero \bzero$ element
+    \end{itemize}
+
+    \onslide<4->{
+        For a 2D semiconductor/insulator, where $v_c(\bq) \sim 1/q $, we have \\
+
         \begin{equation*}
-                W_{\bG \bG'}(\bq) = \sqrt{v_c(\bq+\bG)} \varepsilon^{-1}_{\bG \bG'} (\bq) \sqrt{v_c(\bq+\bG')}
+            \varepsilon_{\mathrm{2D}}(\bq) \equiv \varepsilon_{\mathrm{M}}(\bq) \stackrel{q \to 0}{\approx} 1 + r_0 q \equiv \varepsilon_{\mathrm{RK}}(\bq) \onslide<5->{ \Rightarrow V_{\mathrm{RK}}(q) =  \frac{v_c(q)}{\varepsilon_{\mathrm{RK}}(q)} = \frac{e^2}{2 \varepsilon_0 (1 + r_0 q) q}}
         \end{equation*}}
-
-    \onslide<2->{
-        Ignoring local field effects ($\bG=\bG'=0$) and defining $\varepsilon_{\mathrm{M}}(\bq) = \frac{1}{\varepsilon^{-1}_{\bzero \bzero}(\bq)} \neq \varepsilon_{\bzero \bzero}(\bq)$
-
-        \begin{equation*}
-            W(\bq) =  \frac{v_c(\bq)}{\varepsilon_{\mathrm{M}}(\bq)}
-        \end{equation*}}
-
-    \onslide<3->{
-
-        For a 2D semiconductor/insulator $\varepsilon_{\mathrm{M}}(\bq) = \varepsilon_{\mathrm{2D}}(\bq) \stackrel{q \to 0}{\approx} 1 + r_0 q \equiv \varepsilon_{\mathrm{RK}}(\bq)$
-
-        \begin{equation*}
-            V_{\mathrm{RK}}(q) =  \frac{v_c(q)}{\varepsilon_{\mathrm{RK}}(q)} = \frac{e^2}{2 \varepsilon_0 (1 + r_0 q) q}
-        \end{equation*}}
-
 \end{frame}
 
 
@@ -74,16 +83,16 @@
 
      \begin{columns}
 
-        \column{0.6\linewidth}
+        \column{0.55\linewidth}
         \onslide<1->{
         Linear combination of atomic orbitals (LCAO) method
 
         \begin{equation*}
-            \psi_{n \bk} (\br) = \frac{1}{\sqrt{N}} \sum_{\bR} \ee^{\ii \bk \cdot \bR} \sum_{i \alpha} C_{i \alpha}^{n \bk} \phi_{\alpha} (\br - \bR - \bt_i)
+            \psi_{n, \bk} (\br) = \frac{1}{\sqrt{N}} \sum_{\bR} \ee^{\ii \bk \cdot \bR} \sum_{i \alpha} C_{i \alpha}^{n \bk} \phi_{\alpha} (\br - \bR - \bt_i)
         \end{equation*}
         
         \begin{equation*}
-            H \psi_{n \bk} (\br) = \epsilon_{n \bk} \psi_{n \bk} (\br)
+            H \psi_{n, \bk} (\br) = \epsilon_{n \bk} \psi_{n, \bk} (\br)
         \end{equation*}}
 
         \onslide<2->{
@@ -93,13 +102,13 @@
         \end{equation*}
         
         \begin{equation*}
-            C^{n \bk}_{i \alpha} \to  \text{TB coefficients}
+           \left(\mathbf{C}^{n\bk}\right)_{i \alpha} = C^{n \bk}_{i \alpha} \to  \text{TB coefficients}
         \end{equation*}
 }
 
-        \column{0.5\linewidth}
+        \column{0.45\linewidth}
         \onslide<3->{
-            \hspace{-0.5cm}
+            \hspace{-1.5cm}
         \begin{equation*}
             H(\bk)\!\begin{bmatrix}
                        C^{n\vectormath{k}}_{1,1} \\
@@ -131,27 +140,25 @@
 \end{frame}
 
 \begin{frame}{Polarizability in the TB approximation}
-
+    \onslide<2->{Recalling that $ H(\bk) \mathbf{C}^{n\bk} = \epsilon_{n\bk} \mathbf{C}^{n\bk}$ and the expression for the polarizability}
+   \vspace{-0.1cm}
     \begin{equation*}
-            H(\bk) \mathbf{C}^{n\bk} = \epsilon_{n\bk} \mathbf{C}^{n\bk}
+        \begin{split}
+                \onslide<3->{\chi^0_{\bG \bG'} (\bq) &=\frac{2}{\mathcal{A}} \sum_{vc} \sum_{\bk \sigma} \frac{\bra{c,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{v,\bk  + \bq} \! \bra{v,\bk  + \bq} \ee^{\ii(\bq + \bG') \vdot \br} \ket{c,\bk}}{\epsilon_{v\bk + \bq} - \epsilon_{c\bk} } \onslide<8>{=}\\}
+                \onslide<8->{ &=\frac{2}{\mathcal{A}} \sum_{v c} \sum_{\bk \sigma} \frac{I^{\bG}_{v \bk + \bq, c \bk} \qty(I^{\bG'}_{v \bk + \bq, c \bk})^*}{\epsilon_{v\bk + \bq} - \epsilon_{c\bk} }}
+        \end{split}
     \end{equation*}
 
-    \onslide<1->{
+    \onslide<4->{
+        \textcolor{green!50!black}{Auxiliary calculation:} \\}
+    \onslide<5->{
+        In the point-like orbital approximation $\phi^*_{\alpha} (\br - \bR - \bt_i) \phi_{\beta} (\br - \bR' - \bt_j) \approx \delta_{ij} \delta_{\alpha \beta} \delta_{\bR \bR'} \delta(\br - \bR - \bt_i) \Rightarrow$}
         \begin{equation*}
             \begin{split}
-                \chi^0_{\bG \bG'} (\bq) &=\frac{2}{\mathcal{A}} \sum_{vc} \sum_{\bk \sigma} \frac{\bra{c,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{v,\bk  + \bq} \! \bra{v,\bk  + \bq} \ee^{\ii(\bq + \bG') \vdot \br} \ket{c,\bk}}{\epsilon_{v\bk + \bq} - \epsilon_{c\bk} }= \\
-                &=\frac{2}{\mathcal{A}} \sum_{v c} \sum_{\bk \sigma} \frac{I^{\bG}_{v \bk + \bq, c \bk} \qty(I^{\bG'}_{v \bk + \bq, c \bk})^*}{\epsilon_{v\bk + \bq} - \epsilon_{c\bk} }
+                \onslide<6->{\bra{n,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{n',\bk  +\bq} &= \int_{\mathcal{A}} \dr\, \psi^*_{n, \bk } (\br)\, \ee^{-\ii(\bq + \bG) \vdot \br} \psi_{n', \bk+ \bq} (\br) = \\}
+                \onslide<7->{&= \sum_{i \alpha} (C_{i \alpha}^{n \bk })^* C_{i \alpha}^{n' \bk + \bq}  \ee^{- \ii (\bq + \bG)  \vdot \bt_i}  \equiv I^{\bG}_{n \bk, n' \bk + \bq}}
             \end{split}
-        \end{equation*}}
-
-    \onslide<2->{
-        Point-like orbital approximation: $\phi^*_{\alpha} (\br - \bR - \bt_i) \phi_{\beta} (\br - \bR' - \bt_j) \approx \delta_{ij} \delta_{\alpha \beta} \delta_{\bR \bR'} \delta(\br - \bR - \bt_i) \Rightarrow$
-        \begin{equation*}
-            \begin{split}
-                \Rightarrow I^{\bG}_{n \bk, n' \bk + \bq} \equiv \bra{n,\bk} \ee^{-\ii(\bq + \bG) \vdot \br} \ket{n',\bk  +\bq} &= \int_{\mathcal{A}} \dr\, \psi^*_{n, \bk } (\br)\, \ee^{-\ii(\bq + \bG) \vdot \br} \psi_{n', \bk+ \bq} (\br) = \\
-                &= \sum_{i \alpha} (C_{i \alpha}^{n \bk })^* C_{i \alpha}^{n' \bk + \bq}  \ee^{- \ii (\bq + \bG)  \vdot \bt_i}
-            \end{split}
-        \end{equation*}}
+        \end{equation*}
 
 \end{frame}
 
@@ -161,7 +168,7 @@
         \item Diagonalize $H(\bk + \bq)$ and store all $\{\epsilon_{n\bk + \bq}\}$,$\{\mathbf{C}^{n\bk  + \bq}\}\, \forall \bq \in \mathrm{BZ}, \, \forall \bk \in \mathrm{BZ'}, \mathrm{BZ} \neq \mathrm{BZ}' $  \itemsep=2em
         \item Compute dielectric matrix $ \varepsilon_{\bG \bG'} (\bq) \, \forall \bq \in \mathrm{BZ}$  \itemsep=2em
         \item Invert $\varepsilon_{\bG \bG'} (\bq) \,\forall \bq \in \mathrm{BZ}$ \itemsep=2em
-        \item Compute the exciton \itemsep=2em
+        \item Compute the exciton (next slides) \itemsep=2em
     \end{enumerate}
 
 \end{frame}
@@ -180,61 +187,78 @@
     \end{figure}
 
     \begin{itemize}
-        \item \relax [1] A~Erba et al., Journal of Chemical Theory and Computation 13.10 (2017)
+        \item \relax [1] A~Erba et al. - \textit{J. Chem. Theory Comput.} \textbf{13} 10 (2017)
     \end{itemize}
 
 \end{frame}
 
 
-\begin{frame}{Convergence of the inverse dielectric function}
-
-    Does $\varepsilon^{-1}_{\bG \bG'} (\bq)$ converge?
-
-    \begin{figure}[h]
-        \begin{minipage}{0.5\textwidth}
-            \includegraphics[width=0.8\textwidth]{Figures/inv_epsilon_convergence_hBN_panels.jpg}
-        \end{minipage}%
-        \begin{minipage}{0.5\textwidth}
-		\caption{Convergence of the inverse dielectric matrix. Selection of inverse dielectric function matrix elements $\varepsilon^{-1}_{\bG \bG'} (\bq)$ computed at a point $\bq \neq \bzero$ in the BZ~for hBN. We display the head element in panel \pnl{a}, a diagonal body element in panel \pnl{b}, an off-diagonal body element in panel \pnl{c}, and a wing element in panel \pnl{d}. The cutoff $G_c$ increases by 3 \AA$^{-1}$ for each point, from $G_c = 3$ \AA$^{-1}$ up to $G_c = 54$~\AA$^{-1}$.}
-            \label{fig:hBN_inv_epsilon_convergence}
-        \end{minipage}
-    \end{figure}
-
-\end{frame}
-
 \begin{frame}{Macroscopic dielectric function: results}
 
     \begin{columns}
-
-        \column{0.3\textwidth}
-
-        \onslide<1->{
-            Defined as
-            \begin{equation*}
-                \varepsilon^{\mathrm{2D}}(\bq) \equiv \frac{1}{\varepsilon^{-1}_{\bzero \bzero}(\bq)}
-            \end{equation*} }
-
-        \onslide<3->{
-
-        \textbf{We recover:}
-        \begin{block}{}
-            \begin{itemize}
-                \item Rytova--Keldysh model
-                \item $\varepsilon^{\mathrm{2D}}(\bzero) = 1$
-                \item $\varepsilon^{\mathrm{2D}}(\bq) \to 1$ w/ $q \to \infty$
-            \end{itemize}
-        \end{block}}
-
-        \column{0.7\textwidth}
+        \column{.5\linewidth}
+        \onslide<1->{Does $\varepsilon^{-1}_{\bG \bG'} (\bq)$ converge?} \onslide<3->{\textcolor{red}{Clearly no!}}
 
         \onslide<2->{
-            \begin{figure}[H]
+        \begin{figure}[h]
+            \begin{minipage}{\textwidth}
+                \includegraphics[width=0.8\textwidth]{Figures/inv_epsilon_convergence_hBN_panels.jpg}
+            \end{minipage}%
+            \begin{minipage}{0.5\textwidth}		
+            \end{minipage}
+        \end{figure}}        
+
+        \column{.5\linewidth}
+
+        \onslide<4->{
+            But still,
+            \begin{itemize}
+                \item<5-> How close can we get to the \textit{ab initio} result?
+                \item<7-> Does the exciton binding energy converge?
+            \end{itemize}
+        }
+        \onslide<6->{
+        \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.6\linewidth]{Figures/epsilon2D_abinitio_vs_q_hBN}
-                \caption{The black curve was obtained by Simone~Latini, Thomas Olsen and Kristian Thygesen in Phys. Rev. B 92 (24 2015-12) through \textit{ab initio}~methods, applying a cutoff of $150$~eV for the reciprocal lattice vectors. Therein, the band structure of hBN was obtained through DFT~calculations within LDA. The dielectric function was calculated as a post-processing step. We computed the dielectric function along the symmetry line $\Gamma-K$. A vertical line indicating $q \dd_{\perp} = 1$ is included, with $\dd_{\perp} = 3.33$~\AA.}
-            \end{figure}}
-    \end{columns}
+                \includegraphics[width=\linewidth]{Figures/epsilon2D_abinitio_vs_q_hBN}                
+            \end{figure}
+            S.~Latini, T.~Olsen, K.~S. Thygesen - \textit{Phys. Rev. B} \textbf{92} 245123 (2015)}
+    \end{columns}    
 \end{frame}
+
+% \begin{frame}{Macroscopic dielectric function: results}
+
+%     \begin{columns}
+
+%         \column{0.3\textwidth}
+
+%         \onslide<1->{
+%             Defined as
+%             \begin{equation*}
+%                 \varepsilon^{\mathrm{2D}}(\bq) \equiv \frac{1}{\varepsilon^{-1}_{\bzero \bzero}(\bq)}
+%             \end{equation*} }
+
+%         \onslide<3->{
+
+%         \textbf{We recover:}
+%         \begin{block}{}
+%             \begin{itemize}
+%                 \item Rytova--Keldysh model
+%                 \item $\varepsilon^{\mathrm{2D}}(\bzero) = 1$
+%                 \item $\varepsilon^{\mathrm{2D}}(\bq) \to 1$ w/ $q \to \infty$
+%             \end{itemize}
+%         \end{block}}
+
+%         \column{0.7\textwidth}
+
+%         \onslide<2->{
+%             \begin{figure}[H]
+%                 \centering
+%                 \includegraphics[width=0.6\linewidth]{Figures/epsilon2D_abinitio_vs_q_hBN}                
+%             \end{figure}
+%             S.~Latini, T.~Olsen, K.~S. Thygesen - \textit{Phys. Rev. B} \textbf{92} 245123 (2015)}
+%     \end{columns}
+% \end{frame}
 
 \begin{frame}{Macroscopic dielectric function: 2D vs. \textit{Ab initio}}
     \setbeamercovered{transparent=15}
@@ -245,10 +269,10 @@
             \begin{block}{2D approach}
             %\vspace{-6cm}
                 \begin{enumerate}\setlength{\itemsep}{10pt}
-                    \item $\varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \frac{e^2}{2 |\bq + \bG| \varepsilon_0} \chi^0_{\bG \bG'}(\bq)$ \\
+                    \item<2-> $\varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \frac{e^2}{2 |\bq + \bG| \varepsilon_0} \chi^0_{\bG \bG'}(\bq)$ \\
                           w/ $\langle n,\bk |\ee^{-\ii (\bq + \bG) \vdot \br}|n',\bk'\rangle$ computed on the fly
-                    \item invert $ \varepsilon_{\bG \bG'} (\bq)$
-                    \item pick the head element $\varepsilon^{\mathrm{2D}}(\bq) = \frac{1}{\varepsilon^{-1}_{\bzero \bzero} (\bq)}$
+                    \item<3-> invert $ \varepsilon_{\bG \bG'} (\bq)$
+                    \item<4-> pick the head element $\varepsilon^{\mathrm{2D}}(\bq) = \frac{1}{\varepsilon^{-1}_{\bzero \bzero} (\bq)}$
                 \end{enumerate}
         \end{block}}
         
@@ -257,19 +281,20 @@
 
         \column{0.49\textwidth}
 
-        \onslide<2->{
+        \onslide<5->{
             \vspace{-5.cm}
             \begin{block}{\textit{Ab initio}}
             %\vspace{-6.0cm}
                 \begin{enumerate}\setlength{\itemsep}{10pt}
-                    \item $\varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \frac{e^2}{|\bq + \bG|^2 \varepsilon_0} \chi^0_{\bG \bG'}(\bq)$
+                    \item<6-> $\varepsilon_{\bG \bG'} (\bq) = \delta_{\bG \bG'} - \frac{e^2}{|\bq + \bG|^2 \varepsilon_0} \chi^0_{\bG \bG'}(\bq)$
                     w/ $\langle n,\bk |\ee^{-\ii (\bq + \bG) \vdot \br}|n',\bk'\rangle$ via FFT
-                    \item invert $ \varepsilon_{\bG \bG'} (\bq)$
-                    \item $\varepsilon^{-1}_{\bzero \bzero}(\bq,z,z') = \frac{1}{L_{\perp}} \sum_{G_z, G_z'} \ee^{\ii G_z z} \varepsilon^{-1}_{G_z \hat{z} G_z' \hat{z}}(\bq) \ee^{-\ii G_z' z'}$
-                    \item $\varepsilon^{\mathrm{2D}}(\bq) = 1/\langle \varepsilon^{-1}_{\bzero \bzero}(\bq,z,z') \rangle$
+                    \item<7-> invert $ \varepsilon_{\bG \bG'} (\bq)$
+                    \item<8-> $\varepsilon^{-1}_{\bzero \bzero}(\bq,z,z') = \frac{1}{L_{\perp}} \sum_{G_z, G_z'} \ee^{\ii G_z z} \varepsilon^{-1}_{G_z \hat{z} G_z' \hat{z}}(\bq) \ee^{-\ii G_z' z'}$
+                    \item<9-> $\varepsilon^{\mathrm{2D}}(\bq) = 1/\langle \varepsilon^{-1}_{\bzero \bzero}(\bq,z,z') \rangle$
                 \end{enumerate}
                 \vspace{0.3cm}
-                Also, $v_c(r) = \frac{\Theta(R_c - z)}{r}$, with $R_c \to \infty$
+                \onslide<10->{Also, the Coulomb potential is truncated in $z$ as\\
+                 $v_c(\br) = \frac{\Theta(R_c - z)}{r}$, with $R_c \to \infty$}
                 \end{block}
         }
     \end{columns}
@@ -279,50 +304,121 @@
 
 \begin{frame}{Excitons with the Xatu code}
 
-    Bethe--Salpeter Equation (BSE)
+    \onslide<1->{Exact diagonalization of the Bethe--Salpeter Equation (BSE)
 
     \begin{empheq}[innerbox=\fbox]{equation*}
         \qty(\epsilon_{c  \bk + \bQ} - \epsilon_{v \bk}) A^{\bQ}_{v c }(\bk) + \sum_{v' c',\bk'} K_{v c, v' c'}(\bk,\bk',\bQ) A^{\bQ}_{v'c'}(\bk') = E_X A^{\bQ}_{v c }(\bk)
         \label{eq:exact_Bethe_Salpeter_equation}
-    \end{empheq}
+    \end{empheq}}
 
-    In the interaction kernel $K \equiv - (D - X)$, the direct $D$ and exchange $X$ interaction terms read
+    \onslide<2->{In the interaction kernel $K \equiv - (D - X)$, the direct $D$ and exchange $X$ interaction terms read}
 
    \begin{equation*}
         \begin{aligned}
             \label{eq:interaction_matrix_element_direct_reciprocal}
-            D_{vc, v' c'}(\bk,\bk',\bQ) =& \int \dr \int \dr' \psi^*_{c,\bk+\bQ}(\br) \psi^*_{v',\bk'}(\br') W(\br,\br') \psi_{c',\bk'+\bQ}(\br) \psi_{v, \bk}(\br') = \\
-            =& \frac{1}{\mathcal{A}} \sum_{\bG,\bG'} \qty(I^{\bG}_{c' \bk'+\bQ, c \bk+\bQ})^* W_{\bG \bG'}(\bk - \bk') I^{\bG'}_{v' \bk',v\bk}
+            \onslide<3->{D_{vc, v' c'}(\bk,\bk',\bQ) =& \int \dr \int \dr' \psi^*_{c,\bk+\bQ}(\br) \psi^*_{v',\bk'}(\br') W(\br,\br') \psi_{c',\bk'+\bQ}(\br) \psi_{v, \bk}(\br') = \\
+            =& \frac{1}{\mathcal{A}} \sum_{\bG,\bG'} \qty(I^{\bG}_{c' \bk'+\bQ, c \bk+\bQ})^* W_{\bG \bG'}(\bk - \bk') I^{\bG'}_{v' \bk',v\bk}}
         \end{aligned}
     \end{equation*}
 
-    and (albeit in \textit{ab initio} $X$ uses the bare potential $v_c$)
+    \onslide<3->{and (albeit in \textit{ab initio} $X$ uses the bare potential $v_c$)}
+
     \vspace{-0.3cm}
     \begin{equation*}
-        X_{vc, v' c'}(\bk,\bk',\bQ) = \int_{\mathcal{A}} \dr \int_{\mathcal{A}} \dr' \psi^*_{c,\bk+\bQ}(\br) \psi^*_{v',\bk'}(\br') W(\br,\br') \psi_{v,\bk}(\br) \psi_{c',\bk'+\bQ}(\br') \to 0
+        \onslide<4->{X_{vc, v' c'}(\bk,\bk',\bQ) = \int_{\mathcal{A}} \dr \int_{\mathcal{A}} \dr' \psi^*_{c,\bk+\bQ}(\br) \psi^*_{v',\bk'}(\br') W(\br,\br') \psi_{v,\bk}(\br) \psi_{c',\bk'+\bQ}(\br') \to 0}
     \end{equation*}
 
 \end{frame}
 
 \begin{frame}{Excitons in \ch{hBN}: numerical results}
-
+    \only<1>{
     \begin{table}[h]
-        \caption{This table examines the convergence of the excitonic ground state binding energy with the cutoff for the dielectric matrix, $G_c^{\varepsilon}$, and for the interaction matrix elements, $G_c^X$, always with $G_c^X < G_c^{\varepsilon}$. We have used $N_k=60^2$, $N_c=N_v=1$, and we have excluded the exchange interaction term. For the size of the regularization region, we used the radius $q_0 = 0.6 k_0$, where $k_0$ is the norm of the wavevector(s) closest to the origin. All values are in eV. $\Delta = 2.08366$~eV}
+        \caption{$N_k=60^2$, $N_c=N_v=1$, All values are in eV.}
         \centering
         \begin{tabular}{cc||cccccc}
             \cline{3-8}
             &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$}                                            \\ \cline{3-8}
             &                                                & 0                          & 3                & 5.1              & 6              & 8                      & 9                       \\ \cline{8-8} \hline \hline
-            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 4.14935                & 5.5566                      & 5.75416                  & 6.011076               & --        \\
+            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 4.14935                & 5.5566                      & 5.75416                  & 6.011076               & $E_b >$ gap        \\
             \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & 2.503138               & 4.380231                    & 3.803146                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
             \multicolumn{1}{|c|}{}                           & 5.1 & X                    & \multicolumn{1}{c|}{X} & 2.797365                    & 2.99418                  & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
             \multicolumn{1}{|c|}{}                           & 6 & X                      & X                      & \multicolumn{1}{c|}{X}      & 2.83405                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
             \multicolumn{1}{|c|}{}                           & 8 & X                      & X                      & X                           & \multicolumn{1}{c|}{X}   & 2.900768               & 5.811998          \\ \cline{7-7}
             \multicolumn{1}{|c|}{}                           & 9 & X                      & X                      & X                           & X                        & \multicolumn{1}{c|}{X} & 3.018396 \\  \cline{1-2} \cline{1-2} \cline{8-8}
         \end{tabular}
-    \end{table}
+    \end{table}}
 
-    Cell with -- means that the output result does not make physical sense
+    \only<2>{
+    \begin{table}[h]
+        \caption{$N_k=60^2$, $N_c=N_v=1$, All values are in eV.}
+        \centering
+        \begin{tabular}{cc||cccccc}
+            \cline{3-8}
+            &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$}                                            \\ \cline{3-8}
+            &                                                & 0                          & 3                & 5.1              & 6              & 8                      & 9                       \\ \cline{8-8} \hline \hline
+            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & \textcolor{red}{0} & \multicolumn{1}{c|}{X} & \textcolor{red}{4.14935}                & \textcolor{red}{5.5566}                      & \textcolor{red}{5.75416}                  & \textcolor{red}{6.011076}               & $E_b >$ gap        \\
+            \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & 2.503138               & 4.380231                    & 3.803146                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
+            \multicolumn{1}{|c|}{}                           & 5.1 & X                    & \multicolumn{1}{c|}{X} & 2.797365                    & 2.99418                  & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
+            \multicolumn{1}{|c|}{}                           & 6 & X                      & X                      & \multicolumn{1}{c|}{X}      & 2.83405                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
+            \multicolumn{1}{|c|}{}                           & 8 & X                      & X                      & X                           & \multicolumn{1}{c|}{X}   & 2.900768               & 5.811998          \\ \cline{7-7}
+            \multicolumn{1}{|c|}{}                           & 9 & X                      & X                      & X                           & X                        & \multicolumn{1}{c|}{X} & 3.018396 \\  \cline{1-2} \cline{1-2} \cline{8-8}
+        \end{tabular}
+    \end{table}}
+
+    \only<3>{
+    \begin{table}[h]
+        \caption{$N_k=60^2$, $N_c=N_v=1$, All values are in eV.}
+        \centering
+        \begin{tabular}{cc||cccccc}
+            \cline{3-8}
+            &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$}          \\ \cline{3-8}
+            &                                                & 0                          & 3                      & 5.1              & \textcolor{green!50!black}{6}              & 8                      & 9                       \\ \cline{8-8} \hline \hline
+            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 4.14935                & 5.5566                     & \textcolor{green!50!black}{5.75416}                  & 6.011076               & $E_b >$ gap        \\
+            \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & 2.503138               & 4.380231                    & \textcolor{green!50!black}{3.803146}                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
+            \multicolumn{1}{|c|}{}                           & 5.1 & X                    & \multicolumn{1}{c|}{X} & 2.797365                    & \textcolor{green!50!black}{2.99418}                 & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
+            \multicolumn{1}{|c|}{}                           & 6 & X                      & X                      & \multicolumn{1}{c|}{X}      & \textcolor{green!50!black}{2.83405}                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
+            \multicolumn{1}{|c|}{}                           & 8 & X                      & X                      & X                           & \multicolumn{1}{c|}{X}   & 2.900768               & 5.811998          \\ \cline{7-7}
+            \multicolumn{1}{|c|}{}                           & 9 & X                      & X                      & X                           & X                        & \multicolumn{1}{c|}{X} & 3.018396 \\  \cline{1-2} \cline{1-2} \cline{8-8}
+        \end{tabular}
+    \end{table}}
+
+    \only<4>{
+    \begin{table}[h]
+        \caption{$N_k=60^2$, $N_c=N_v=1$, All values are in eV.}
+        \centering
+        \begin{tabular}{cc||cccccc}
+            \cline{3-8}
+            &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$}                                            \\ \cline{3-8}
+            &                                                & 0                          & 3                & 5.1              & 6              & 8                      & 9                       \\ \cline{8-8} \hline \hline
+            \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 4.14935                & 5.5566                     & 5.75416                  & 6.011076               & $E_b >$ gap        \\
+            \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & \textcolor{blue!50!black}{2.503138}                  & 4.380231                    & 3.803146                 & 3.811565               & 4.326392          \\ \cline{4-4} \cline{4-4}
+            \multicolumn{1}{|c|}{}                           & 5.1 & X                    & \multicolumn{1}{c|}{X} & 2.797365                    & \textcolor{blue!50!black}{2.99418}                 & 3.888089               & 4.630105          \\ \cline{5-5} \cline{5-5}
+            \multicolumn{1}{|c|}{}                           & 6 & X                      & X                      & \multicolumn{1}{c|}{X}      & 2.83405                  & 3.492424               & 4.330678          \\ \cline{6-6} \cline{6-6}
+            \multicolumn{1}{|c|}{}                           & 8 & X                      & X                      & X                           & \multicolumn{1}{c|}{X}   & \textcolor{blue!50!black}{2.900768}               & 5.811998          \\ \cline{7-7}
+            \multicolumn{1}{|c|}{}                           & 9 & X                      & X                      & X                           & X                        & \multicolumn{1}{c|}{X} & \textcolor{blue!50!black}{3.018396} \\  \cline{1-2} \cline{1-2} \cline{8-8}
+        \end{tabular}
+    \end{table}}
+
+    
+
+    $E_b >$ gap -> the exciton comes with negative excitation energy
+    
+    \begin{itemize}
+        \onslide<2->{\item \textcolor{red}{For $G^X_c = 0$, $E_b$ increases with increasing $G^{\varepsilon}_c$ (decreased screening)}}
+    \end{itemize}
+
+    
+    \begin{itemize}
+        \onslide<3->{\item For $G^X_c = 0$, $E_b$ increases with increasing $G^{\varepsilon}_c$ (decreased screening)
+        \item \textcolor{green!50!black}{For a given $G^{\varepsilon}_c$, $E_b$ converges w/ increasing $G^X_c$ (somewhat)}}        
+    \end{itemize}
+    
+    \onslide<4->{
+    \begin{itemize}
+        \item For $G^X_c = 0$, $E_b$ increases with increasing $G^{\varepsilon}_c$ (decreased screening)
+        \item For a given $G^{\varepsilon}_c$, $E_b$ converges w/ increasing $G^X_c$ (somewhat)
+         \item \textcolor{blue!50!black}{Quite remarkably, $E_b$ converges!}}
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Monolayer \ch{MoS2} band structure}
