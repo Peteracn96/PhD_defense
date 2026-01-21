@@ -151,9 +151,11 @@ SLIDE 15
 -Specially the most anisotropic case, with a dispersion back-bend due to the peak in the conductivity around the resonance due to the 2s state
 
 %%%%%%%%%%%%%%% THE DIELECTRIC FUNCTION %%%%%%%%%%%%%%
+SLIDE 18
+Work is collaboration POLIMA and UAM
 In this part we will better understand the limits in the screening properties of insulators leading to the RK model using the Xatu code.
 
-SLIDE 17
+SLIDE 19
 -We briefly revisit the microscopic theory for the dielectric function,
 whose form for the potential depends on the dimensionality of the system
 
@@ -161,17 +163,17 @@ whose form for the potential depends on the dimensionality of the system
 and the expression for the polarizability is also 2D
 
 
-SLIDE 18
+SLIDE 20
 
 -The numerical dielectric function is used to model the screened potential;
 
--From which we can define a macroscopic 2D diele. f. as
+-From which we can define a macroscopic 2D potential and dielectric function diele. f. as
 -and define a macros. potential in the standard way
 
 -We will see that in the low-q limit of the macr. diele. f. we recover the RK model
 -3rd Linear response
 
-SLIDE 19
+SLIDE 21
 
 -Unlike usually done in ab-initio implementations, where a plane-wave basis is used for the single-particle states
 -Herein we work in a basis of localized orbitals, atomic or Wannier, where we use the LCAO to write the Bloch states
@@ -181,13 +183,13 @@ SLIDE 19
 -The eigenstates eigenenergy identity is translated to an eigenvector eigenvalue identity for the Bloch Hamiltonian,
 representing the Hamiltonian of the crystal and the eigenvectors, the capital C's, store the TB coefficients
 
-SLIDE 20
+SLIDE 22
 
 - We can quite efficiently compute the matrix elements of the polarizability by evaluating the plane-wave matrix elements
 in the point-like orbital approximation, where no info about the atomic orbitals enters, so that the Fourier transform is
 evaluated on the fly instantly
 
-SLIDE 21
+SLIDE 23
 
 - To compute the excitons, as pre-processing steps
 
@@ -196,17 +198,17 @@ SLIDE 21
 3)...
 4) Finally compute the exciton
 
-SLIDE 22
+SLIDE 24
 -Test example
 -Monolayer hBN again, this time with a DFT model in a basis of localized Gaussian orbitals, obtained by DFT calculations using the CRYSTAL package
 
-SLIDE 23
+SLIDE 25
 -We analise how does the inverse dielectric matrix behave as we increase its size
 -We have in each panel a selected element of the inverse dielectric matrix, to see that it converges quite slowly
 
 -Nonetheless, let us proceed with what we have.
 
-SLIDE 24
+
 -Trying to reproduce results in the literature
 -We compare the 2D macroscopic dielectric function with our implementation and an ab initio one
 to see good agreement, especially for lower values of q
