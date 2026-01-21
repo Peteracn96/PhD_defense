@@ -52,3 +52,37 @@
         \item CRYSTAL \texttt{<filename>.oupt} file as input for xatu
     \end{itemize}
 \end{frame}
+
+\begin{frame}{Monolayer \ch{MoS2} Band Structure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{Figures/MoS2_bands}
+        \caption{Band structure of monolayer \ch{MoS2} using CRYSTAL}
+    \end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Excitons in \ch{MoS2}: Numerical Results}
+
+    \begin{table}[h]
+        \caption{This table examines the convergence of the excitonic ground state binding energy with the cutoff for the dielectric matrix, $G_c^{\varepsilon}$, and for the interaction matrix elements, $G_c^X$, always with $G_c^X < G_c^{\varepsilon}$. We have used $N_k=60^2$, $N_c=N_v=1$, and we have excluded the exchange interaction term. For the size of the regularization region, we used the radius $q_0 = 0.6 k_0$, where $k_0$ is the norm of the wavevector(s) closest to the origin. All values are in eV. $\Delta = 2.08366$~eV}
+        \centering
+            \begin{tabular}{cc||cccccc}
+                \cline{3-8}
+                &   & \multicolumn{6}{c|}{$G^{\varepsilon}_c$ (\AA$^{-1}$)}                                            \\ \cline{3-8}
+                &   & 0                      & 3                      & 4                           & 5                        & 7                      & 8                       \\ \cline{8-8} \hline \hline
+                \multicolumn{1}{|c|}{\multirow{4}{*}{$G^X_{c}$}} & 0 & \multicolumn{1}{c|}{X} & 0.979507               & 1.567935                    & 1.401440                 & 1.951914               & ---        \\
+                \multicolumn{1}{|c|}{}                           & 3 & \multicolumn{1}{c|}{X} & 0.756373               & 1.619208                    & 1.785953                 & ---                    & ---          \\ \cline{4-4} \cline{4-4}
+                \multicolumn{1}{|c|}{}                           & 4 & X                      & \multicolumn{1}{c|}{X} & 0.774599                    & 1.105537                 & ---                    & ---          \\ \cline{5-5} \cline{5-5}
+                \multicolumn{1}{|c|}{}                           & 5 & X                      & X                      & \multicolumn{1}{c|}{X}      & 0.778244                 & ---                    & ---          \\ \cline{6-6} \cline{6-6}
+                \multicolumn{1}{|c|}{}                           & 7 & X                      & X                      & X                           & \multicolumn{1}{c|}{X}   & 0.792309               & 1.300835          \\ \cline{7-7}
+                \multicolumn{1}{|c|}{}                           & 8 & X                      & X                      & X                           & X                        & \multicolumn{1}{c|}{X} & 0.799489 \\  \cline{1-2} \cline{1-2} \cline{8-8}
+            \end{tabular}
+    \end{table}
+
+    Cell with -- means that the output result does not make physical sense
+
+    At least apparent numerical convergence
+\end{frame}
