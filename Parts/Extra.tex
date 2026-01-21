@@ -3,7 +3,7 @@
 
 %%%%%%%  EXTRA  %%%%%%%%%
 
-\section{Supplementary Material}
+%\section{Supplementary Material}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -25,4 +25,30 @@
     \begin{equation}
         W_{\bG \bzero} (\bzero) = W_{\bzero \bG} (\bzero) = 0
     \end{equation}
+\end{frame}
+
+
+\begin{frame}{Q2D dielectric function}
+
+   \begin{figure}[h]
+            \centering
+            \includegraphics[width=0.85\textwidth]{Figures/epsilon_Q2D_MoS2_unjoined.png}        
+        \end{figure}
+\end{frame}
+
+\begin{frame}{Computational Framework:\\ Pre-processing calculations}
+
+    \begin{itemize}
+        \item DFT w/ Quantum ESPRESSO + Wannier90 (\texttt{\_tb.dat} file)
+        \\ OR 
+        \item DFT w/ CRYSTAL (\texttt{.oupt} file)
+    \end{itemize}
+    
+    \,\,\,\,\,\,\,\,\,\,\,\,\,\,\Big\downarrow
+
+    System file:
+    \begin{itemize}
+        \item Wannier90 \texttt{<filename>\_tb.dat} file $\xrightarrow{\text{w90 utility}}$ \texttt{.model} file as input for xatu
+        \item CRYSTAL \texttt{<filename>.oupt} file as input for xatu
+    \end{itemize}
 \end{frame}
